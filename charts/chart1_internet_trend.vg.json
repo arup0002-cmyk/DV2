@@ -1,0 +1,105 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Internet Usage Adoption Timeline in Australia",
+    "subtitle": "Percentage of the general population with internet access (1990 - 2020)",
+    "fontSize": 16,
+    "subtitleFontSize": 12,
+    "color": "#e2e8f0",
+    "subtitleColor": "#94a3b8",
+    "anchor": "start"
+  },
+  "width": "container",
+  "height": 380,
+  "background": "transparent",
+  "data": {
+    "url": "datasets/australia_internet_usage_cleaned.csv"
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "line",
+        "color": "#38bdf8",
+        "strokeWidth": 3.5
+      },
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal",
+          "title": "Year",
+          "axis": {
+            "grid": false,
+            "labelColor": "#94a3b8",
+            "titleColor": "#94a3b8",
+            "tickColor": "#94a3b8",
+            "domainColor": "#94a3b8",
+            "format": "%Y"
+          }
+        },
+        "y": {
+          "field": "Internet_Usage_Percentage",
+          "type": "quantitative",
+          "title": "Total Access Rate (%)",
+          "axis": {
+            "gridColor": "#334155",
+            "labelColor": "#94a3b8",
+            "titleColor": "#94a3b8",
+            "domainColor": "#94a3b8"
+          }
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "point",
+        "filled": true,
+        "size": 80,
+        "color": "#bae6fd"
+      },
+      "encoding": {
+        "x": {"field": "Year", "type": "temporal"},
+        "y": {"field": "Internet_Usage_Percentage", "type": "quantitative"},
+        "opacity": {
+          "condition": {
+            "param": "hover",
+            "empty": false,
+            "value": 1
+          },
+          "value": 0
+        },
+        "tooltip": [
+          {"field": "Year", "type": "temporal", "timeUnit": "year", "title": "Year"},
+          {"field": "Internet_Usage_Percentage", "type": "quantitative", "title": "Access Rate (%)", "format": ".1f"}
+        ]
+      },
+      "params": [
+        {
+          "name": "hover",
+          "select": {
+            "type": "point",
+            "on": "mouseover",
+            "clear": "mouseout",
+            "nearest": true
+          }
+        }
+      ]
+    },
+    {
+      "mark": {"type": "rule", "color": "#cbd5e1", "strokeWidth": 1, "dash": [4, 4]},
+      "encoding": {
+        "x": {"field": "Year", "type": "temporal"},
+        "opacity": {
+          "condition": {
+            "param": "hover",
+            "empty": false,
+            "value": 0.4
+          },
+          "value": 0
+        }
+      }
+    }
+  ],
+  "config": {
+    "view": {"stroke": "transparent"}
+  }
+}
