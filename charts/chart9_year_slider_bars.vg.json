@@ -4,7 +4,7 @@
     "text": "Cross-Sectional Activity Demographics by Year",
     "color": "#cbd5e1"
   },
-  "width": 450,
+  "width": "container",
   "height": 300,
   "background": "transparent",
   "data": {
@@ -46,6 +46,14 @@
       "type": "nominal",
       "scale": {"scheme": "accent"},
       "legend": {"titleColor": "#94a3b8", "labelColor": "#94a3b8"}
-    }
+    },
+    "tooltip": [
+      {"field": "Activity", "type": "nominal"},
+      {"field": "Age_Group", "type": "nominal"},
+      {"field": "Percentage", "aggregate": "mean", "type": "quantitative", "title": "Mean Rate (%)", "format": ".1f"}
+    ]
+  },
+  "config": {
+    "view": {"stroke": "transparent"}
   }
 }
