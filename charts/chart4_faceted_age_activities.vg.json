@@ -1,20 +1,15 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": {"text": "How Kids' Mobile Habits Evolve with Age", "color": "#cbd5e1"},
+  "title": {"text": "Kids' Mobile Habits (Draft)", "color": "#cbd5e1"},
+  "width": "container", 
+  "height": 280,
   "background": "transparent",
   "data": {"url": "datasets/kids_mobile_usage_by_age.csv"},
-  "transform": [
-    {"filter": "datum.Activity == 'Play games' || datum.Activity == 'Send or receive texts' || datum.Activity == 'Use apps'"}
-  ],
-  "mark": "area",
+  "mark": "bar",
   "encoding": {
-    "column": {"field": "Age_Group", "type": "nominal", "title": null, "header": {"labelColor": "#cbd5e1"}},
-    "x": {"field": "Year", "type": "quantitative", "axis": {"format": "d", "labelColor": "#94a3b8", "grid": false}},
-    "y": {"field": "Percentage", "type": "quantitative", "stack": "normalize", "axis": {"labelColor": "#94a3b8", "gridColor": "#334155"}},
-    "color": {"field": "Activity", "type": "nominal", "scale": {"range": ["#f43f5e", "#3b82f6", "#10b981"]}},
-    "tooltip": [{"field": "Year", "type": "quantitative"}, {"field": "Activity", "type": "nominal"}, {"field": "Percentage", "type": "quantitative", "format": ".1f"}]
+    "x": {"field": "Activity", "type": "nominal", "axis": {"labelColor": "#94a3b8", "titleColor": "#94a3b8", "labelAngle": -45}},
+    "y": {"field": "Percentage", "type": "quantitative", "aggregate": "mean", "axis": {"labelColor": "#94a3b8", "titleColor": "#94a3b8", "gridColor": "#334155"}},
+    "color": {"field": "Age_Group", "type": "nominal"}
   },
-  "width": 120,
-  "height": 280,
   "config": {"view": {"stroke": "transparent"}}
 }
