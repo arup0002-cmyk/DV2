@@ -1,22 +1,24 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": {"text": "Kids' Mobile Habits", "color": "#cbd5e1"},
-  "width": 350, "height": 280, "background": "transparent",
-  "data": {
-    "values": [
-      {"Age": "6-9", "Activity": "Games", "Pct": 72.9},
-      {"Age": "10-11", "Activity": "Games", "Pct": 68.8},
-      {"Age": "12-13", "Activity": "Games", "Pct": 71.2},
-      {"Age": "6-9", "Activity": "Apps", "Pct": 55.9},
-      {"Age": "10-11", "Activity": "Apps", "Pct": 66.0},
-      {"Age": "12-13", "Activity": "Apps", "Pct": 82.4}
-    ]
+  "title": {"text": "How Kids' Mobile Habits Evolve with Age", "color": "#cbd5e1"},
+  "background": "transparent",
+  "data": {"url": "datasets/kids_mobile_usage_by_age.csv"},
+  "transform": [
+    {"filter": "datum.Activity == 'Play games' || datum.Activity == 'Send or receive texts' || datum.Activity == 'Use apps'"}
+  ],
+  "facet": {
+    "column": {"field": "Age_Group", "type": "nominal", "title": null, "header": {"labelColor": "#cbd5e1", "labelFontSize": 14}}
   },
-  "mark": "bar",
-  "encoding": {
-    "x": {"field": "Activity", "type": "nominal", "axis": {"labelColor": "#94a3b8", "titleColor": "#94a3b8", "labelAngle": 0}},
-    "y": {"field": "Pct", "type": "quantitative", "axis": {"labelColor": "#94a3b8", "titleColor": "#94a3b8", "gridColor": "#334155"}},
-    "color": {"field": "Age", "type": "nominal", "scale": {"scheme": "pastel1"}}
+  "spec": {
+    "width": 120,
+    "height": 280,
+    "mark": "area",
+    "encoding": {
+      "x": {"field": "Year", "type": "quantitative", "axis": {"format": "d", "labelColor": "#94a3b8", "titleColor": "#94a3b8", "grid": false}},
+      "y": {"field": "Percentage", "type": "quantitative", "stack": "normalize", "axis": {"labelColor": "#94a3b8", "titleColor": "#94a3b8", "gridColor": "#334155"}},
+      "color": {"field": "Activity", "type": "nominal", "scale": {"range": ["#f43f5e", "#3b82f6", "#10b981"]}, "legend": {"titleColor": "#94a3b8", "labelColor": "#94a3b8", "orient": "bottom"}},
+      "tooltip": [{"field": "Year", "type": "quantitative"}, {"field": "Activity", "type": "nominal"}, {"field": "Percentage", "type": "quantitative", "format": ".1f"}]
+    }
   },
   "config": {"view": {"stroke": "transparent"}}
 }
