@@ -22,14 +22,14 @@
     }
   },
   "spec": {
-    "width": 200,
-    "height": 300,
+    "width": 120,
+    "height": 280,
     "mark": "area",
     "encoding": {
       "x": {
         "field": "Year",
-        "type": "ordinal",
-        "axis": {"labelColor": "#94a3b8", "titleColor": "#94a3b8"}
+        "type": "quantitative",
+        "axis": {"format": "d", "labelColor": "#94a3b8", "titleColor": "#94a3b8", "grid": false}
       },
       "y": {
         "field": "Percentage",
@@ -41,13 +41,16 @@
         "field": "Activity",
         "type": "nominal",
         "scale": {"range": ["#f43f5e", "#3b82f6", "#10b981"]},
-        "legend": {"titleColor": "#94a3b8", "labelColor": "#94a3b8"}
+        "legend": {"titleColor": "#94a3b8", "labelColor": "#94a3b8", "orient": "bottom"}
       },
       "tooltip": [
-        {"field": "Year", "type": "ordinal"},
+        {"field": "Year", "type": "quantitative"},
         {"field": "Activity", "type": "nominal"},
         {"field": "Percentage", "type": "quantitative", "format": ".1f"}
       ]
     }
+  },
+  "config": {
+    "view": {"stroke": "transparent"}
   }
 }
