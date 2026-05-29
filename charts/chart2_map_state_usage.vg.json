@@ -1,0 +1,45 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Kids' Internet Access by Region (2020)",
+    "subtitle": "Percentage of children accessing the internet via mobile devices",
+    "color": "#cbd5e1"
+  },
+  "width": 600,
+  "height": 450,
+  "background": "transparent",
+  "projection": {"type": "mercator"},
+  "data": {
+    "url": "https://raw.githubusercontent.com/rowanhogan/australian-states/master/states.geojson",
+    "format": {"type": "json", "property": "features"}
+  },
+  "transform": [
+    {
+      "calculate": "datum.properties.STATE_NAME == 'New South Wales' || datum.properties.STATE_NAME == 'Australian Capital Territory' ? 'NSW/ACT' : datum.properties.STATE_NAME == 'Victoria' || datum.properties.STATE_NAME == 'Tasmania' ? 'Vic/Tas' : datum.properties.STATE_NAME == 'Queensland' ? 'Qld' : datum.properties.STATE_NAME == 'South Australia' || datum.properties.STATE_NAME == 'Northern Territory' ? 'SA/NT' : datum.properties.STATE_NAME == 'Western Australia' ? 'WA' : 'Other'",
+      "as": "State_Group"
+    },
+    {
+      "lookup": "State_Group",
+      "from": {
+        "data": {"url": "datasets/kids_mobile_usage_by_state_2020.csv"},
+        "key": "State_Group",
+        "fields": ["Activity", "Percentage"]
+      }
+    },
+    {"filter": "datum.Activity == 'Access the internet'"}
+  ],
+  "mark": {"type": "geoshape", "stroke": "#1e293b", "strokeWidth": 1},
+  "encoding": {
+    "color": {
+      "field": "Percentage",
+      "type": "quantitative",
+      "scale": {"scheme": "blues"},
+      "title": "Internet Access (%)",
+      "legend": {"titleColor": "#94a3b8", "labelColor": "#94a3b8"}
+    },
+    "tooltip": [
+      {"field": "State_Group", "type": "nominal", "title": "Region"},
+      {"field": "Percentage", "type": "quantitative", "title": "Internet Access (%)", "format": ".1f"}
+    ]
+  }
+}
