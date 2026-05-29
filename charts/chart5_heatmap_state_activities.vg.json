@@ -1,0 +1,39 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Regional Lifestyle Differences in Mobile Usage (2020)",
+    "color": "#cbd5e1"
+  },
+  "background": "transparent",
+  "width": 500,
+  "height": 400,
+  "data": {
+    "url": "datasets/kids_mobile_usage_by_state_2020.csv"
+  },
+  "mark": {"type": "rect", "tooltip": true},
+  "encoding": {
+    "x": {
+      "field": "State_Group",
+      "type": "nominal",
+      "title": "Region",
+      "axis": {"labelColor": "#94a3b8", "titleColor": "#94a3b8", "labelAngle": -45}
+    },
+    "y": {
+      "field": "Activity",
+      "type": "nominal",
+      "title": "Mobile Activity",
+      "axis": {"labelColor": "#94a3b8", "titleColor": "#94a3b8"}
+    },
+    "color": {
+      "field": "Percentage",
+      "type": "quantitative",
+      "scale": {"scheme": "magma"},
+      "legend": {"titleColor": "#94a3b8", "labelColor": "#94a3b8"}
+    },
+    "tooltip": [
+      {"field": "State_Group", "type": "nominal"},
+      {"field": "Activity", "type": "nominal"},
+      {"field": "Percentage", "type": "quantitative", "title": "Participation (%)", "format": ".1f"}
+    ]
+  }
+}
