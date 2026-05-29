@@ -1,59 +1,22 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": {
-    "text": "Cross-Sectional Activity Demographics by Year",
-    "color": "#cbd5e1"
-  },
-  "width": "container",
-  "height": 300,
-  "background": "transparent",
+  "title": {"text": "Usage Growth (2015 vs 2020)", "color": "#cbd5e1"},
+  "width": 350, "height": 300, "background": "transparent",
   "data": {
-    "url": "datasets/kids_mobile_usage_by_age.csv"
-  },
-  "params": [
-    {
-      "name": "Select_Year",
-      "value": 2020,
-      "bind": {
-        "input": "range",
-        "min": 2015,
-        "max": 2020,
-        "step": 1,
-        "name": "Timeline Slider: "
-      }
-    }
-  ],
-  "transform": [
-    {"filter": "datum.Year == Select_Year"}
-  ],
-  "mark": "bar",
-  "encoding": {
-    "x": {
-      "field": "Activity",
-      "type": "nominal",
-      "title": "Mobile Activity",
-      "axis": {"labelColor": "#94a3b8", "titleColor": "#94a3b8", "labelAngle": -30}
-    },
-    "y": {
-      "field": "Percentage",
-      "type": "quantitative",
-      "aggregate": "mean",
-      "title": "Average Engagement (%)",
-      "axis": {"labelColor": "#94a3b8", "titleColor": "#94a3b8", "gridColor": "#334155"}
-    },
-    "color": {
-      "field": "Age_Group",
-      "type": "nominal",
-      "scale": {"scheme": "accent"},
-      "legend": {"titleColor": "#94a3b8", "labelColor": "#94a3b8"}
-    },
-    "tooltip": [
-      {"field": "Activity", "type": "nominal"},
-      {"field": "Age_Group", "type": "nominal"},
-      {"field": "Percentage", "aggregate": "mean", "type": "quantitative", "title": "Mean Rate (%)", "format": ".1f"}
+    "values": [
+      {"Year": "2015", "Pct": 45.2, "Age": "6-9"},
+      {"Year": "2020", "Pct": 58.4, "Age": "6-9"},
+      {"Year": "2015", "Pct": 56.5, "Age": "10-11"},
+      {"Year": "2020", "Pct": 67.2, "Age": "10-11"},
+      {"Year": "2015", "Pct": 69.1, "Age": "12-13"},
+      {"Year": "2020", "Pct": 82.3, "Age": "12-13"}
     ]
   },
-  "config": {
-    "view": {"stroke": "transparent"}
-  }
+  "mark": {"type": "line", "point": true, "strokeWidth": 3},
+  "encoding": {
+    "x": {"field": "Year", "type": "ordinal", "axis": {"labelColor": "#94a3b8", "titleColor": "#94a3b8"}},
+    "y": {"field": "Pct", "type": "quantitative", "axis": {"labelColor": "#94a3b8", "titleColor": "#94a3b8", "gridColor": "#334155"}},
+    "color": {"field": "Age", "type": "nominal", "scale": {"scheme": "accent"}}
+  },
+  "config": {"view": {"stroke": "transparent"}}
 }
