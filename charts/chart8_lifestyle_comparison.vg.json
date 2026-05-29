@@ -4,7 +4,7 @@
     "text": "Growth in Key Digital Lifestyles (2014 vs 2016)",
     "color": "#cbd5e1"
   },
-  "width": 800,
+  "width": "container",
   "height": 350,
   "background": "transparent",
   "data": {
@@ -16,7 +16,7 @@
       "type": "nominal",
       "title": "Primary Purpose",
       "axis": {"labelColor": "#94a3b8", "titleColor": "#94a3b8"},
-      "sort": "-x"
+      "sort": {"field": "2016-17_Pct", "order": "descending"}
     }
   },
   "layer": [
@@ -30,7 +30,7 @@
     {
       "mark": {"type": "point", "size": 120, "color": "#f43f5e", "filled": true},
       "encoding": {
-        "x": {"field": "2014-15_Pct", "type": "quantitative", "title": "Percentage of Population (%)"},
+        "x": {"field": "2014-15_Pct", "type": "quantitative", "title": "Percentage of Population (%)", "axis": {"labelColor": "#94a3b8", "titleColor": "#94a3b8", "gridColor": "#334155"}},
         "tooltip": [
           {"field": "Reason", "type": "nominal"},
           {"field": "2014-15_Pct", "type": "quantitative", "title": "2014-15 (%)"}
@@ -47,5 +47,8 @@
         ]
       }
     }
-  ]
+  ],
+  "config": {
+    "view": {"stroke": "transparent"}
+  }
 }
