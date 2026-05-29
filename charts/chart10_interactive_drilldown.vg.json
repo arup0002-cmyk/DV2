@@ -4,7 +4,7 @@
     "text": "Lifestyle Intensity Metric Drill-Down",
     "color": "#cbd5e1"
   },
-  "width": 450,
+  "width": "container",
   "height": 300,
   "background": "transparent",
   "data": {
@@ -48,5 +48,8 @@
       {"field": "Reason", "type": "nominal", "title": "Activity"},
       {"field": "2016-17_Pct", "type": "quantitative", "title": "Usage (%)"}
     ]
+  },
+  "config": {
+    "view": {"stroke": "transparent"}
   }
 }
