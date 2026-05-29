@@ -5,7 +5,7 @@
     "subtitle": "Percentage of children accessing the internet via mobile devices",
     "color": "#cbd5e1"
   },
-  "width": 600,
+  "width": "container",
   "height": 450,
   "background": "transparent",
   "projection": {"type": "mercator"},
@@ -41,5 +41,8 @@
       {"field": "State_Group", "type": "nominal", "title": "Region"},
       {"field": "Percentage", "type": "quantitative", "title": "Internet Access (%)", "format": ".1f"}
     ]
+  },
+  "config": {
+    "view": {"stroke": "transparent"}
   }
 }
