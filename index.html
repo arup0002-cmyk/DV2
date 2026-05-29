@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How Smartphone Usage Differs Across Australians</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1>Smartphone & Internet Usage in Australia</h1>
+            <p class="hero-subtitle">
+                Exploring how age, location, and lifestyle shape digital connectivity.
+            </p>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+
+            <div class="section-header">
+                <h2>The Rise of Connectivity</h2>
+                <p>Internet access has grown dramatically across Australia over the last few decades, becoming an essential utility rather than a luxury. This trend sets the stage for how smartphones dominate daily life.</p>
+            </div>
+            
+            <div class="chart-grid">
+                <div class="chart-card full-width">
+                    <div id="chart1" class="vis-container"></div>
+                </div>
+            </div>
+
+            <div class="section-header" style="margin-top: 80px;">
+                <h2>Location: The Digital Divide</h2>
+                <p>Where you live in Australia dictates how you use your devices. Urban hubs show vastly different usage patterns compared to regional or remote areas.</p>
+            </div>
+
+            <div class="chart-grid">
+                <div class="chart-card">
+                    <div id="chart2" class="vis-container"></div>
+                    <div class="storytelling-text">
+                        <strong>Regional Access:</strong> Notice how coastal and heavily urbanised states exhibit different connectivity levels compared to remote territories.
+                    </div>
+                </div>
+
+                <div class="chart-card">
+                    <div id="chart5" class="vis-container"></div>
+                    <div class="storytelling-text">
+                        <strong>Activity Density:</strong> Western Australia and Victoria show intense engagement across gaming and apps compared to other regions.
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-header" style="margin-top: 80px;">
+                <h2>Age & Lifestyle: What are we doing online?</h2>
+                <p>A smartphone is no longer just for calling. The reasons Australians access the internet shift drastically as they age.</p>
+            </div>
+
+            <div class="chart-grid">
+                <div class="chart-card">
+                    <div id="chart3" class="vis-container"></div>
+                    <div class="storytelling-text">
+                        <strong>Lifestyle Shifts:</strong> The explosive growth in health services and entertainment usage between 2014 and 2016 highlights our changing priorities.
+                    </div>
+                </div>
+
+                <div class="chart-card">
+                    <div id="chart4" class="vis-container"></div>
+                    <div class="storytelling-text">
+                        <strong>Growing Up Digital:</strong> As children transition into their teenage years, app usage and texting rapidly overtake basic gaming.
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-header" style="margin-top: 80px;">
+                <h2>Deep Dive: Devices, Demographics & Data</h2>
+                <p>Further analysis into screen time, device preferences, and digital habits.</p>
+            </div>
+
+            <div class="chart-grid">
+                <div class="chart-card"><div id="chart6" class="vis-container"></div></div>
+                <div class="chart-card"><div id="chart7" class="vis-container"></div></div>
+                <div class="chart-card full-width"><div id="chart8" class="vis-container"></div></div>
+                <div class="chart-card"><div id="chart9" class="vis-container"></div></div>
+                <div class="chart-card"><div id="chart10" class="vis-container"></div></div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-content">
+            <p>FIT2179 Data Visualisation 2</p>
+            <p>&copy; 2026 Your Name Here</p>
+        </div>
+    </footer>
+
+    <script src="js/vega_lite_vis.js"></script>
+</body>
+</html>
