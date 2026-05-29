@@ -1,56 +1,20 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": {
-    "text": "How Kids' Mobile Habits Evolve with Age",
-    "color": "#cbd5e1"
-  },
+  "title": {"text": "How Kids' Mobile Habits Evolve with Age", "color": "#cbd5e1"},
   "background": "transparent",
-  "data": {
-    "url": "datasets/kids_mobile_usage_by_age.csv"
-  },
+  "data": {"url": "datasets/kids_mobile_usage_by_age.csv"},
   "transform": [
-    {
-      "filter": "datum.Activity == 'Play games' || datum.Activity == 'Send or receive texts' || datum.Activity == 'Use apps'"
-    }
+    {"filter": "datum.Activity == 'Play games' || datum.Activity == 'Send or receive texts' || datum.Activity == 'Use apps'"}
   ],
-  "facet": {
-    "column": {
-      "field": "Age_Group",
-      "type": "nominal",
-      "title": null,
-      "header": {"labelColor": "#cbd5e1", "labelFontSize": 14}
-    }
+  "mark": "area",
+  "encoding": {
+    "column": {"field": "Age_Group", "type": "nominal", "title": null, "header": {"labelColor": "#cbd5e1"}},
+    "x": {"field": "Year", "type": "quantitative", "axis": {"format": "d", "labelColor": "#94a3b8", "grid": false}},
+    "y": {"field": "Percentage", "type": "quantitative", "stack": "normalize", "axis": {"labelColor": "#94a3b8", "gridColor": "#334155"}},
+    "color": {"field": "Activity", "type": "nominal", "scale": {"range": ["#f43f5e", "#3b82f6", "#10b981"]}},
+    "tooltip": [{"field": "Year", "type": "quantitative"}, {"field": "Activity", "type": "nominal"}, {"field": "Percentage", "type": "quantitative", "format": ".1f"}]
   },
-  "spec": {
-    "width": 120,
-    "height": 280,
-    "mark": "area",
-    "encoding": {
-      "x": {
-        "field": "Year",
-        "type": "quantitative",
-        "axis": {"format": "d", "labelColor": "#94a3b8", "titleColor": "#94a3b8", "grid": false}
-      },
-      "y": {
-        "field": "Percentage",
-        "type": "quantitative",
-        "stack": "normalize",
-        "axis": {"labelColor": "#94a3b8", "titleColor": "#94a3b8", "gridColor": "#334155"}
-      },
-      "color": {
-        "field": "Activity",
-        "type": "nominal",
-        "scale": {"range": ["#f43f5e", "#3b82f6", "#10b981"]},
-        "legend": {"titleColor": "#94a3b8", "labelColor": "#94a3b8", "orient": "bottom"}
-      },
-      "tooltip": [
-        {"field": "Year", "type": "quantitative"},
-        {"field": "Activity", "type": "nominal"},
-        {"field": "Percentage", "type": "quantitative", "format": ".1f"}
-      ]
-    }
-  },
-  "config": {
-    "view": {"stroke": "transparent"}
-  }
+  "width": 120,
+  "height": 280,
+  "config": {"view": {"stroke": "transparent"}}
 }
