@@ -13,7 +13,7 @@
   "height": 380,
   "background": "transparent",
   "data": {
-    "url": "datasets/australia_internet_usage_cleaned.csv"
+    "url": "datasets/australia_internet_usage.csv"
   },
   "layer": [
     {
