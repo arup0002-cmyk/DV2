@@ -6,17 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>How Smartphone Usage Differs Across Australians</title>
 
-    <!-- Vega Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
 
-    <!-- CSS -->
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
-    <!-- HERO SECTION -->
     <section class="hero-section">
         <div class="hero-content">
             <h1>Smartphone & Internet Usage in Australia</h1>
@@ -26,14 +23,12 @@
         </div>
     </section>
 
-    <!-- MAIN DASHBOARD -->
     <section class="content-section">
         <div class="container">
 
-            <!-- STAGE 1: HISTORICAL BACKGROUND (Full Width) -->
             <div class="section-header">
                 <h2>The Rise of Connectivity</h2>
-                <p>Internet access has grown dramatically across Australia over the last few decades, becoming an essential utility rather than a luxury. This historical trajectory sets the foundation for how mobile devices dictate contemporary life.</p>
+                <p>Internet access has grown dramatically across Australia over the last few decades. This historical trajectory sets the foundation for how mobile devices dictate contemporary life.</p>
             </div>
             
             <div class="chart-grid">
@@ -42,119 +37,96 @@
                 </div>
             </div>
 
-
-            <!-- STAGE 2: LOCATION & GEOGRAPHY (2 Column Row) -->
-            <div class="section-header" style="margin-top: 80px;">
+            <div class="section-header">
                 <h2>Location: The Digital Divide</h2>
-                <p>Where you live in Australia influences digital exposure. Looking at youth metrics reveals how regional infrastructure and local lifestyle parameters change daily usage rates.</p>
+                <p>Where you live in Australia influences digital exposure. Looking at youth metrics reveals how regional infrastructure changes daily usage rates.</p>
             </div>
 
             <div class="chart-grid">
-                <!-- CHART 2: Map -->
                 <div class="chart-card">
                     <div id="chart2" class="vis-container"></div>
                     <div class="storytelling-text">
-                        <strong>Regional Access:</strong> Notice how geographic boundaries and urbanization rates create noticeable spatial variations in basic mobile internet adoption across the continent.
+                        <strong>Regional Access:</strong> Notice how geographic boundaries create variations in mobile internet adoption across the continent.
                     </div>
                 </div>
-
-                <!-- CHART 5: Heatmap -->
                 <div class="chart-card">
                     <div id="chart5" class="vis-container"></div>
                     <div class="storytelling-text">
-                        <strong>Activity Density:</strong> When looking closely at regional habits, Western Australia and Victoria showcase intense engagement across recreational applications compared to other locations.
+                        <strong>Activity Density:</strong> Western Australia and Victoria showcase intense engagement across recreational applications.
                     </div>
                 </div>
             </div>
 
-
-            <!-- STAGE 3: INTERACTIVE REGIONAL DISCOVERY (Full Width Interactive) -->
-            <div class="section-header" style="margin-top: 80px;">
+            <div class="section-header">
                 <h2>Deep Dive into State Profiles</h2>
-                <p>Select specific device behaviors using the control filter below to directly contrast state-by-state participation levels.</p>
+                <p>Select specific device behaviors using the control filter below to contrast state-by-state participation levels.</p>
             </div>
 
             <div class="chart-grid">
-                <!-- CHART 6: Dropdown Selector Bar -->
                 <div class="chart-card full-width">
                     <div id="chart6" class="vis-container"></div>
                     <div class="storytelling-text">
-                        <strong>Interactive Exploration:</strong> Use this filter to discover unique localized quirks—such as how specific messaging or utility behaviors peak unexpectedly in different territories.
+                        <strong>Interactive Exploration:</strong> Use this filter to discover unique localized quirks in how messaging or utility behaviors peak.
                     </div>
                 </div>
             </div>
 
-
-            <!-- STAGE 4: LIFESTYLE & TEMPORAL SHIFTS (2 Column Row) -->
-            <div class="section-header" style="margin-top: 80px;">
+            <div class="section-header">
                 <h2>Lifestyle & Habits: Shifting Priorities</h2>
-                <p>A smartphone is an interface for a modern lifestyle. The primary purpose of digital interaction reflects a collective transformation toward mobile utilities.</p>
+                <p>A smartphone is an interface for a modern lifestyle. The primary purpose of digital interaction reflects a shift toward mobile utilities.</p>
             </div>
 
             <div class="chart-grid">
-                <!-- CHART 3: Slope Chart -->
                 <div class="chart-card">
                     <div id="chart3" class="vis-container"></div>
                     <div class="storytelling-text">
-                        <strong>Macro Shift Dynamics:</strong> The dramatic shifts in health services, transaction banking, and commercial purchasing behavior confirm that mobile internet handles high-value daily life tasks.
+                        <strong>Macro Shift Dynamics:</strong> The dramatic shifts in health services and transaction banking confirm mobile reliance.
                     </div>
                 </div>
-
-                <!-- CHART 8: Lollipop Chart -->
                 <div class="chart-card">
                     <div id="chart8" class="vis-container"></div>
                     <div class="storytelling-text">
-                        <strong>Growth Margins:</strong> Comparing the baseline change fields clearly illustrates that entertainment and transactional fields grew the absolute fastest over short chronological intervals.
+                        <strong>Growth Margins:</strong> Entertainment and transactional fields grew the absolute fastest over short chronological intervals.
                     </div>
                 </div>
             </div>
 
-
-            <!-- STAGE 5: AGE AND DEVELOPMENTAL EVOLUTION (2 Column Row) -->
-            <div class="section-header" style="margin-top: 80px;">
+            <div class="section-header">
                 <h2>Age: Growing Up Digital</h2>
-                <p>Age remains the strongest indicator of mobile behavior. Tracking generational habits highlights a clear development from passive gaming toward complex social networking utilities.</p>
+                <p>Age remains the strongest indicator of mobile behavior. Tracking generational habits highlights a clear development curve.</p>
             </div>
 
             <div class="chart-grid">
-                <!-- CHART 4: Faceted Area Chart -->
                 <div class="chart-card">
                     <div id="chart4" class="vis-container"></div>
                     <div class="storytelling-text">
-                        <strong>Structural Evolution:</strong> As youth enter upper-primary and early high school age brackets, native data streams change seamlessly from games to structured applications.
+                        <strong>Structural Evolution:</strong> As youth enter high school age brackets, data streams change from games to structured applications.
                     </div>
                 </div>
-
-                <!-- CHART 7: Dynamic Line Chart -->
                 <div class="chart-card">
                     <div id="chart7" class="vis-container"></div>
                     <div class="storytelling-text">
-                        <strong>Temporal Projections:</strong> Isolating individual user age groups via the radio selection reveals that adolescent smartphone behaviors stabilize at extreme engagement baselines rapidly.
+                        <strong>Temporal Projections:</strong> Isolating individual user age groups reveals that adolescent smartphone behaviors stabilize rapidly.
                     </div>
                 </div>
             </div>
 
-
-            <!-- STAGE 6: MACRO TRENDS & BEHAVIORAL INTENSITY (Faceted & Drill-down Block) -->
-            <div class="section-header" style="margin-top: 80px;">
-                <h2>Chronological Profiles & Intensity Drill-Downs</h2>
-                <p>Our final analytical tier isolates behavioral intensity variations to inspect how modern adoption plateaus operate.</p>
+            <div class="section-header">
+                <h2>Chronological Profiles & Intensity</h2>
+                <p>Our final analytical tier isolates behavioral intensity variations to inspect how modern adoption operates.</p>
             </div>
 
             <div class="chart-grid">
-                <!-- CHART 9: Year Slider Bar -->
                 <div class="chart-card">
                     <div id="chart9" class="vis-container"></div>
                     <div class="storytelling-text">
-                        <strong>Cross-Sectional Timeline:</strong> Drag the time range bar back and forth to observe how age profiles across multiple core screen activities scale evenly over a multi-year period.
+                        <strong>Cross-Sectional Timeline:</strong> Drag the time range bar to observe how age profiles scale across a multi-year period.
                     </div>
                 </div>
-
-                <!-- CHART 10: Interactive Highlight Bar -->
                 <div class="chart-card">
                     <div id="chart10" class="vis-container"></div>
                     <div class="storytelling-text">
-                        <strong>Modern Adoption Hierarchy:</strong> Hover over any lifestyle block to dim surrounding channels. This uncovers the precise hierarchy where messaging and utility services dominate over other priorities.
+                        <strong>Adoption Hierarchy:</strong> Hover over any lifestyle block to uncover the precise hierarchy where messaging services dominate.
                     </div>
                 </div>
             </div>
@@ -162,13 +134,13 @@
         </div>
     </section>
 
-    <!-- FOOTER -->
     <footer>
         <div class="container footer-content">
             <p>FIT2179 Data Visualisation 2</p>
-            <p>&copy; 2026 Student Name</p>
         </div>
     </footer>
+
+    <script src="js/vega_lite_vis.js"></script>
 
 </body>
 </html>
