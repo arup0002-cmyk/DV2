@@ -1,0 +1,54 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Growth Trajectory of Habits Over Time",
+    "color": "#cbd5e1"
+  },
+  "width": 450,
+  "height": 300,
+  "background": "transparent",
+  "data": {
+    "url": "datasets/kids_mobile_usage_by_age.csv"
+  },
+  "params": [
+    {
+      "name": "Age_Filter",
+      "select": {"type": "point", "fields": ["Age_Group"]},
+      "bind": {
+        "input": "radio",
+        "options": ["6-9 year olds", "10-11 year olds", "12-13 year olds"],
+        "name": "Filter Age Brackets: "
+      },
+      "value": "12-13 year olds"
+    }
+  ],
+  "transform": [
+    {"filter": {"param": "Age_Filter"}}
+  ],
+  "mark": {"type": "line", "point": true, "strokeWidth": 3},
+  "encoding": {
+    "x": {
+      "field": "Year",
+      "type": "ordinal",
+      "title": "Year",
+      "axis": {"labelColor": "#94a3b8", "titleColor": "#94a3b8"}
+    },
+    "y": {
+      "field": "Percentage",
+      "type": "quantitative",
+      "title": "Participation (%)",
+      "axis": {"labelColor": "#94a3b8", "titleColor": "#94a3b8", "gridColor": "#334155"}
+    },
+    "color": {
+      "field": "Activity",
+      "type": "nominal",
+      "scale": {"scheme": "category10"},
+      "legend": {"titleColor": "#94a3b8", "labelColor": "#94a3b8"}
+    },
+    "tooltip": [
+      {"field": "Activity", "type": "nominal"},
+      {"field": "Year", "type": "ordinal"},
+      {"field": "Percentage", "type": "quantitative", "format": ".1f"}
+    ]
+  }
+}
