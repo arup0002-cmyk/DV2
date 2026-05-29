@@ -5,7 +5,7 @@
     "color": "#cbd5e1"
   },
   "background": "transparent",
-  "width": 500,
+  "width": "container",
   "height": 400,
   "data": {
     "url": "datasets/kids_mobile_usage_by_state_2020.csv"
@@ -35,5 +35,8 @@
       {"field": "Activity", "type": "nominal"},
       {"field": "Percentage", "type": "quantitative", "title": "Participation (%)", "format": ".1f"}
     ]
+  },
+  "config": {
+    "view": {"stroke": "transparent"}
   }
 }
