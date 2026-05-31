@@ -1,23 +1,41 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {"text": "Shift in Lifestyle Reasons for Internet Usage (2014 vs 2016)", "color": "#cbd5e1"},
-  "width": "container", "height": 350, "background": "transparent",
+  "width": "container", 
+  "height": 350, 
+  "background": "transparent",
   "data": {"url": "datasets/reasons_for_internet_usage.csv"},
   "transform": [
-    {"fold": ["2014-15_Pct", "2016-17_Pct"], "as": ["Period", "Percentage"]},
-    {"calculate": "datum.Period == '2014-15_Pct' ? '2014-15' : '2016-17'", "as": "Clean_Year"}
+    {"fold": ["2014-15_Pct", "2016-17_Pct"], "as": ["Period", "Raw_Percentage"]},
+    {"calculate": "datum.Period == '2014-15_Pct' ? '2014-15' : '2016-17'", "as": "Clean_Year"},
+    {"calculate": "toNumber(datum.Raw_Percentage)", "as": "Percentage"}
   ],
   "mark": {"type": "line", "point": {"filled": true, "size": 100}, "strokeWidth": 3},
   "encoding": {
-    "x": {"field": "Clean_Year", "type": "ordinal", "title": "Financial Year", "axis": {"labelColor": "#94a3b8", "titleColor": "#94a3b8"}},
-    "y": {"field": "Percentage", "type": "quantitative", "title": "Population Percentage (%)", "scale": {"domain": [20, 90]}, "axis": {"labelColor": "#94a3b8", "titleColor": "#94a3b8", "gridColor": "#334155"}},
+    "x": {
+      "field": "Clean_Year", 
+      "type": "nominal", 
+      "title": "Financial Year", 
+      "axis": {"labelColor": "#94a3b8", "titleColor": "#94a3b8", "labelAngle": 0}
+    },
+    "y": {
+      "field": "Percentage", 
+      "type": "quantitative", 
+      "title": "Population Percentage (%)", 
+      "scale": {"domain": [20, 90]}, 
+      "axis": {"labelColor": "#94a3b8", "titleColor": "#94a3b8", "gridColor": "#334155"}
+    },
     "color": {
       "field": "Reason", 
       "type": "nominal", 
       "scale": {"scheme": "colorblind"}, 
       "legend": {"titleColor": "#94a3b8", "labelColor": "#94a3b8"}
     },
-    "tooltip": [{"field": "Reason", "type": "nominal"}, {"field": "Clean_Year", "type": "ordinal", "title": "Year"}, {"field": "Percentage", "type": "quantitative", "title": "% of Users"}]
+    "tooltip": [
+      {"field": "Reason", "type": "nominal"}, 
+      {"field": "Clean_Year", "type": "nominal", "title": "Year"}, 
+      {"field": "Percentage", "type": "quantitative", "title": "% of Users", "format": ".1f"}
+    ]
   },
   "config": {"view": {"stroke": "transparent"}}
 }
