@@ -6,12 +6,11 @@
   "params": [
     {
       "name": "Age_Filter",
-      "select": {"type": "point", "fields": ["Age_Group"]},
-      "bind": {"input": "radio", "options": ["6-9 year olds", "10-11 year olds", "12-13 year olds"], "name": "Filter Age Brackets: "},
-      "value": "12-13 year olds"
+      "value": "12-13 year olds",
+      "bind": {"input": "radio", "options": ["6-9 year olds", "10-11 year olds", "12-13 year olds"], "name": "Filter Age Brackets: "}
     }
   ],
-  "transform": [{"filter": {"param": "Age_Filter"}}],
+  "transform": [{"filter": "datum.Age_Group == Age_Filter"}],
   "mark": {"type": "line", "point": true, "strokeWidth": 3},
   "encoding": {
     "x": {"field": "Year", "type": "ordinal", "title": "Year", "axis": {"labelColor": "#94a3b8", "titleColor": "#94a3b8"}},
