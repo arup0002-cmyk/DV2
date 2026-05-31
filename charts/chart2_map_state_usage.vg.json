@@ -21,12 +21,19 @@
     {
       "lookup": "State_Group",
       "from": {
-        "data": {"url": "datasets/kids_mobile_usage_by_state_2020.csv"},
+        "data": {
+          "values": [
+            {"State_Group": "NSW/ACT", "Percentage": 93.5},
+            {"State_Group": "Vic/Tas", "Percentage": 94.2},
+            {"State_Group": "Qld", "Percentage": 91.8},
+            {"State_Group": "SA/NT", "Percentage": 89.5},
+            {"State_Group": "WA", "Percentage": 92.1}
+          ]
+        },
         "key": "State_Group",
-        "fields": ["Activity", "Percentage"]
+        "fields": ["Percentage"]
       }
-    },
-    {"filter": "datum.Activity == 'Access the internet'"}
+    }
   ],
   "mark": {"type": "geoshape", "stroke": "#1e293b", "strokeWidth": 1},
   "encoding": {
