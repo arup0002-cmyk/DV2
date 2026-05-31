@@ -1,28 +1,102 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": {"text": "Comparing Mobile Activities Across States (2020)", "color": "#cbd5e1"},
-  "width": "container",
-  "height": 300,
-  "background": "transparent",
-  "data": {
-    "values": [
-      {"Year": "2015", "Pct": 45},
-      {"Year": "2020", "Pct": 58}
-    ]
+
+  "title": {
+    "text": "Mobile Activities Among Australian Children",
+    "subtitle": "Compare trends in smartphone activities across age groups",
+    "color": "#cbd5e1",
+    "subtitleColor": "#94a3b8",
+    "fontSize": 18
   },
+
+  "width": 500,
+  "height": 300,
+
+  "background": "transparent",
+
+  "data": {
+    "url": "datasets/kids_mobile_usage_by_age.csv"
+  },
+
+  "params": [
+    {
+      "name": "activitySelect",
+      "bind": {
+        "input": "select",
+        "options": [
+          "Play games",
+          "Take photos/videos",
+          "Use apps",
+          "Send or receive texts"
+        ],
+        "name": "Activity: "
+      },
+      "value": "Play games"
+    }
+  ],
+
+  "transform": [
+    {
+      "filter": "datum.Activity == activitySelect"
+    }
+  ],
+
   "mark": {
     "type": "line",
-    "point": true,
-    "color": "#38bdf8"
+    "point": {
+      "filled": true,
+      "size": 100
+    },
+    "strokeWidth": 4
   },
+
   "encoding": {
     "x": {
       "field": "Year",
-      "type": "ordinal"
+      "type": "ordinal",
+      "title": "Year",
+      "axis": {
+        "labelColor": "#94a3b8",
+        "titleColor": "#94a3b8",
+        "grid": false
+      }
     },
+
     "y": {
-      "field": "Pct",
-      "type": "quantitative"
+      "field": "Percentage",
+      "type": "quantitative",
+      "title": "Participation (%)",
+      "axis": {
+        "labelColor": "#94a3b8",
+        "titleColor": "#94a3b8",
+        "gridColor": "#334155"
+      }
+    },
+
+    "color": {
+      "field": "Age_Group",
+      "type": "nominal",
+      "scale": {
+        "scheme": "category10"
+      },
+      "legend": {
+        "title": "Age Group",
+        "labelColor": "#94a3b8",
+        "titleColor": "#94a3b8"
+      }
+    },
+
+    "tooltip": [
+      {"field": "Age_Group", "title": "Age Group"},
+      {"field": "Activity"},
+      {"field": "Year"},
+      {"field": "Percentage", "format": ".1f"}
+    ]
+  },
+
+  "config": {
+    "view": {
+      "stroke": "transparent"
     }
   }
 }
