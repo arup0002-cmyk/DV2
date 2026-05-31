@@ -6,12 +6,11 @@
   "params": [
     {
       "name": "Activity_Select",
-      "select": {"type": "point", "fields": ["Activity"]},
-      "bind": {"input": "select", "options": ["Play games", "Take photos/videos", "Use apps", "Send or receive texts", "Call parents/family", "Listen to music", "Access the internet", "Call my friends"], "name": "Select Mobile Activity: "},
-      "value": "Play games"
+      "value": "Play games",
+      "bind": {"input": "select", "options": ["Play games", "Take photos/videos", "Use apps", "Send or receive texts", "Call parents/family", "Listen to music", "Access the internet", "Call my friends"], "name": "Select Mobile Activity: "}
     }
   ],
-  "transform": [{"filter": {"param": "Activity_Select"}}],
+  "transform": [{"filter": "datum.Activity == Activity_Select"}],
   "mark": {"type": "bar", "cornerRadiusEnd": 4},
   "encoding": {
     "x": {"field": "State_Group", "type": "nominal", "title": "State/Territory Group", "axis": {"labelColor": "#94a3b8", "titleColor": "#94a3b8", "labelAngle": 0}},
