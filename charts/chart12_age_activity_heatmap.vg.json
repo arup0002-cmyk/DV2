@@ -1,0 +1,72 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+
+  "title": {
+    "text": "Digital Activity Preferences by Age Group",
+    "subtitle": "Heatmap of smartphone activity participation",
+    "color": "#cbd5e1",
+    "subtitleColor": "#94a3b8"
+  },
+
+  "width": 600,
+  "height": 320,
+
+  "background": "transparent",
+
+  "data": {
+    "url": "datasets/kids_mobile_usage_by_age.csv",
+    "format": {"type": "csv"}
+  },
+
+  "mark": {
+    "type": "rect"
+  },
+
+  "encoding": {
+    "x": {
+      "field": "Activity",
+      "type": "nominal",
+      "title": "Activity",
+      "axis": {
+        "labelAngle": -25,
+        "labelColor": "#94a3b8",
+        "titleColor": "#94a3b8"
+      }
+    },
+
+    "y": {
+      "field": "Age_Group",
+      "type": "nominal",
+      "title": "Age Group",
+      "axis": {
+        "labelColor": "#94a3b8",
+        "titleColor": "#94a3b8"
+      }
+    },
+
+    "color": {
+      "field": "Percentage",
+      "type": "quantitative",
+      "scale": {
+        "scheme": "blues"
+      },
+      "legend": {
+        "title": "Participation %",
+        "labelColor": "#94a3b8",
+        "titleColor": "#94a3b8"
+      }
+    },
+
+    "tooltip": [
+      {"field": "Age_Group"},
+      {"field": "Activity"},
+      {"field": "Percentage"}
+    ]
+  },
+
+  "config": {
+    "view": {
+      "stroke": "transparent"
+    }
+  }
+}
