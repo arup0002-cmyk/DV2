@@ -8,10 +8,10 @@
       {"Year": "2020", "Pct": 58, "Age": "6-9"}
     ]
   },
-  "mark": "line",
+  "mark": {"type": "line", "point": true},
   "encoding": {
-    "x": {"field": "Year", "type": "ordinal"},
-    "y": {"field": "Pct", "type": "quantitative"},
+    "x": {"field": "Year", "type": "ordinal", "axis": {"labelColor": "white", "titleColor": "white"}},
+    "y": {"field": "Pct", "type": "quantitative", "axis": {"labelColor": "white", "titleColor": "white"}},
     "color": {"field": "Age", "type": "nominal"}
   }
 }
