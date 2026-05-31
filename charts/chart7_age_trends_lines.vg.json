@@ -10,13 +10,15 @@
       "name": "Age_Filter",
       "value": "12-13 year olds",
       "bind": {
-        "input": "radio",
+        "input": "select",
         "options": ["6-9 year olds", "10-11 year olds", "12-13 year olds"],
-        "name": "Filter Age Brackets: "
+        "name": "Select Age Group: "
       }
     }
   ],
-  "transform": [{"filter": "datum.Age_Group == Age_Filter"}],
+  "transform": [
+    {"filter": "datum.Age_Group == Age_Filter"}
+  ],
   "mark": {"type": "line", "point": true, "strokeWidth": 3},
   "encoding": {
     "x": {
