@@ -10,7 +10,12 @@
     "y": {"field": "Reason", "type": "nominal", "title": null, "axis": {"labelColor": "#94a3b8"}},
     "fillOpacity": {"condition": {"param": "highlight", "value": 1}, "value": 0.4},
     "strokeWidth": {"condition": {"param": "highlight", "empty": false, "value": 2}, "value": 0},
-    "color": {"field": "Reason", "type": "nominal", "scale": {"scheme": "colorblind"}, "legend": null},
+    "color": {
+      "field": "Reason", 
+      "type": "nominal", 
+      "scale": {"scheme": "colorblind"}, 
+      "legend": null
+    },
     "tooltip": [{"field": "Reason", "type": "nominal", "title": "Activity"}, {"field": "2016-17_Pct", "type": "quantitative", "title": "Usage (%)"}]
   },
   "config": {"view": {"stroke": "transparent"}}
