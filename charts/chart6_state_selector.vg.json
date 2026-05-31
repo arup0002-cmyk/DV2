@@ -16,7 +16,12 @@
   "encoding": {
     "x": {"field": "State_Group", "type": "nominal", "title": "State/Territory Group", "axis": {"labelColor": "#94a3b8", "titleColor": "#94a3b8", "labelAngle": 0}},
     "y": {"field": "Percentage", "type": "quantitative", "title": "Participation Rate (%)", "scale": {"domain": [0, 100]}, "axis": {"labelColor": "#94a3b8", "titleColor": "#94a3b8", "gridColor": "#334155"}},
-    "color": {"field": "State_Group", "type": "nominal", "scale": {"scheme": "colorblind"}, "legend": null},
+    "color": {
+      "field": "State_Group", 
+      "type": "nominal", 
+      "scale": {"scheme": "colorblind"}, 
+      "legend": null
+    },
     "tooltip": [{"field": "State_Group", "type": "nominal", "title": "State"}, {"field": "Activity", "type": "nominal"}, {"field": "Percentage", "type": "quantitative", "title": "Rate (%)", "format": ".1f"}]
   },
   "config": {"view": {"stroke": "transparent"}}
