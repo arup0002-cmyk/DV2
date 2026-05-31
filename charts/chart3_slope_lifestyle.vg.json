@@ -4,46 +4,35 @@
   "width": "container",
   "height": 350,
   "background": "transparent",
-  "data": {
-    "values": [
-      {"Reason": "Entertainment", "Year": "2014-15", "Percentage": 60.1},
-      {"Reason": "Entertainment", "Year": "2016-17", "Percentage": 80.0},
-      {"Reason": "Social networking", "Year": "2014-15", "Percentage": 72.4},
-      {"Reason": "Social networking", "Year": "2016-17", "Percentage": 79.9},
-      {"Reason": "Banking", "Year": "2014-15", "Percentage": 72.2},
-      {"Reason": "Banking", "Year": "2016-17", "Percentage": 79.5},
-      {"Reason": "Purchasing goods", "Year": "2014-15", "Percentage": 61.0},
-      {"Reason": "Purchasing goods", "Year": "2016-17", "Percentage": 72.6},
-      {"Reason": "Health services", "Year": "2014-15", "Percentage": 21.8},
-      {"Reason": "Health services", "Year": "2016-17", "Percentage": 46.1},
-      {"Reason": "Formal educational", "Year": "2014-15", "Percentage": 25.3},
-      {"Reason": "Formal educational", "Year": "2016-17", "Percentage": 31.7}
-    ]
-  },
+  "data": {"url": "datasets/reasons_for_internet_usage.csv"},
+  "transform": [
+    {"fold": ["2014-15_Pct", "2016-17_Pct"], "as": ["Year", "Percentage"]},
+    {"calculate": "datum.Year == '2014-15_Pct' ? '2014-15' : '2016-17'", "as": "Clean_Year"}
+  ],
   "mark": {"type": "line", "point": {"filled": true, "size": 100}, "strokeWidth": 3},
   "encoding": {
     "x": {
-      "field": "Year",
-      "type": "nominal",
-      "title": "Financial Year",
-      "axis": {"labelColor": "#94a3b8", "titleColor": "#94a3b8", "labelAngle": 0}
+      "field": "Clean_Year", 
+      "type": "ordinal", 
+      "title": "Financial Year", 
+      "axis": {"labelColor": "#94a3b8", "titleColor": "#94a3b8"}
     },
     "y": {
-      "field": "Percentage",
-      "type": "quantitative",
-      "title": "Population Percentage (%)",
-      "scale": {"domain": [20, 90]},
+      "field": "Percentage", 
+      "type": "quantitative", 
+      "title": "Population Percentage (%)", 
+      "scale": {"domain": [20, 90]}, 
       "axis": {"labelColor": "#94a3b8", "titleColor": "#94a3b8", "gridColor": "#334155"}
     },
     "color": {
-      "field": "Reason",
-      "type": "nominal",
+      "field": "Reason", 
+      "type": "nominal", 
       "scale": {"scheme": "colorblind"},
       "legend": {"titleColor": "#94a3b8", "labelColor": "#94a3b8"}
     },
     "tooltip": [
-      {"field": "Reason", "type": "nominal"},
-      {"field": "Year", "type": "nominal", "title": "Year"},
+      {"field": "Reason", "type": "nominal"}, 
+      {"field": "Clean_Year", "type": "ordinal", "title": "Year"}, 
       {"field": "Percentage", "type": "quantitative", "title": "% of Users", "format": ".1f"}
     ]
   },
