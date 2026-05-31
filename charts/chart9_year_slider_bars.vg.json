@@ -1,40 +1,79 @@
+```json
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "name": "chart9_year_slider_bars",
+
   "title": {
-    "text": "Usage Growth",
-    "color": "#e2e8f0",
-    "fontSize": 14
+    "text": "Mobile Phone Ownership Growth Among Children",
+    "color": "#cbd5e1",
+    "fontSize": 18
   },
-  "width": "container",
-  "height": 200,
+
+  "width": 450,
+  "height": 250,
+
   "background": "transparent",
+
   "data": {
     "values": [
-      {"Year": "2015", "Pct": 45, "Age": "6-9"}, 
-      {"Year": "2020", "Pct": 58, "Age": "6-9"},
-      {"Year": "2015", "Pct": 69, "Age": "12-13"}, 
-      {"Year": "2020", "Pct": 82, "Age": "12-13"}
+      {"Year": "2015", "Pct": 45, "Age": "6-9"},
+      {"Year": "2020", "Pct": 58, "Age": "6-9"}
     ]
   },
-  "mark": {"type": "line", "point": {"filled": true, "size": 60}, "strokeWidth": 3},
+
+  "mark": {
+    "type": "line",
+    "point": {
+      "filled": true,
+      "size": 120,
+      "color": "#38bdf8"
+    },
+    "strokeWidth": 4,
+    "color": "#38bdf8"
+  },
+
   "encoding": {
     "x": {
       "field": "Year",
       "type": "ordinal",
-      "axis": {"labelColor": "#94a3b8", "titleColor": "#94a3b8", "grid": false}
+      "title": "Year",
+      "axis": {
+        "labelColor": "#94a3b8",
+        "titleColor": "#94a3b8",
+        "grid": false
+      }
     },
+
     "y": {
       "field": "Pct",
       "type": "quantitative",
-      "axis": {"labelColor": "#94a3b8", "titleColor": "#94a3b8", "gridColor": "#334155"}
+      "title": "Ownership Rate (%)",
+      "scale": {
+        "domain": [40, 65]
+      },
+      "axis": {
+        "labelColor": "#94a3b8",
+        "titleColor": "#94a3b8",
+        "gridColor": "#334155"
+      }
     },
-    "color": {
-      "field": "Age",
-      "type": "nominal",
-      "scale": {"scheme": "set2"},
-      "legend": {"labelColor": "#94a3b8", "titleColor": "#94a3b8"}
-    }
+
+    "tooltip": [
+      {
+        "field": "Year",
+        "type": "ordinal"
+      },
+      {
+        "field": "Pct",
+        "type": "quantitative",
+        "title": "Ownership (%)"
+      }
+    ]
   },
-  "config": {"view": {"stroke": "transparent"}}
+
+  "config": {
+    "view": {
+      "stroke": "transparent"
+    }
+  }
 }
+```
