@@ -1,19 +1,13 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {"text": "Comparing Mobile Activities Across States (2020)", "color": "#cbd5e1"},
-  "width": "container",
-  "height": 300,
-  "background": "transparent",
+  "width": "container", "height": 300, "background": "transparent",
   "data": {"url": "datasets/kids_mobile_usage_by_state_2020.csv"},
   "params": [
     {
       "name": "Activity_Select",
       "select": {"type": "point", "fields": ["Activity"]},
-      "bind": {
-        "input": "select",
-        "options": ["Play games", "Take photos/videos", "Use apps", "Send or receive texts", "Call parents/family", "Listen to music", "Access the internet", "Call my friends"],
-        "name": "Select Mobile Activity: "
-      },
+      "bind": {"input": "select", "options": ["Play games", "Take photos/videos", "Use apps", "Send or receive texts", "Call parents/family", "Listen to music", "Access the internet", "Call my friends"], "name": "Select Mobile Activity: "},
       "value": "Play games"
     }
   ],
@@ -22,7 +16,7 @@
   "encoding": {
     "x": {"field": "State_Group", "type": "nominal", "title": "State/Territory Group", "axis": {"labelColor": "#94a3b8", "titleColor": "#94a3b8", "labelAngle": 0}},
     "y": {"field": "Percentage", "type": "quantitative", "title": "Participation Rate (%)", "scale": {"domain": [0, 100]}, "axis": {"labelColor": "#94a3b8", "titleColor": "#94a3b8", "gridColor": "#334155"}},
-    "color": {"field": "State_Group", "type": "nominal", "scale": {"scheme": "pastel1"}, "legend": null},
+    "color": {"field": "State_Group", "type": "nominal", "scale": {"scheme": "colorblind"}, "legend": null},
     "tooltip": [{"field": "State_Group", "type": "nominal", "title": "State"}, {"field": "Activity", "type": "nominal"}, {"field": "Percentage", "type": "quantitative", "title": "Rate (%)", "format": ".1f"}]
   },
   "config": {"view": {"stroke": "transparent"}}
