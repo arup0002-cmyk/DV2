@@ -5,17 +5,20 @@
     "text": "Mobile Activities Among Australian Children",
     "subtitle": "Play Games Usage by Age Group (2015–2020)",
     "color": "#cbd5e1",
-    "subtitleColor": "#94a3b8"
+    "subtitleColor": "#94a3b8",
+    "fontSize": 20
   },
 
   "width": 600,
-  "height": 300,
+  "height": 320,
 
   "background": "transparent",
 
   "data": {
     "url": "datasets/kids_mobile_usage_by_age.csv",
-    "format": {"type": "csv"}
+    "format": {
+      "type": "csv"
+    }
   },
 
   "transform": [
@@ -26,7 +29,10 @@
 
   "mark": {
     "type": "line",
-    "point": true,
+    "point": {
+      "filled": true,
+      "size": 120
+    },
     "strokeWidth": 4
   },
 
@@ -34,15 +40,18 @@
     "x": {
       "field": "Year",
       "type": "ordinal",
+      "title": "Year",
       "axis": {
         "labelColor": "#94a3b8",
-        "titleColor": "#94a3b8"
+        "titleColor": "#94a3b8",
+        "grid": false
       }
     },
 
     "y": {
       "field": "Percentage",
       "type": "quantitative",
+      "title": "Participation Rate (%)",
       "axis": {
         "labelColor": "#94a3b8",
         "titleColor": "#94a3b8",
@@ -54,15 +63,26 @@
       "field": "Age_Group",
       "type": "nominal",
       "legend": {
+        "orient": "bottom",
+        "title": "Age Group",
         "labelColor": "#94a3b8",
         "titleColor": "#94a3b8"
       }
     },
 
     "tooltip": [
-      {"field": "Age_Group"},
-      {"field": "Year"},
-      {"field": "Percentage"}
+      {
+        "field": "Age_Group",
+        "title": "Age Group"
+      },
+      {
+        "field": "Year"
+      },
+      {
+        "field": "Percentage",
+        "title": "Participation (%)",
+        "format": ".1f"
+      }
     ]
   },
 
