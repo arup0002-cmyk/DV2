@@ -1,9 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {"text": "Growth in Key Digital Lifestyles (2014 vs 2016)", "color": "#cbd5e1"},
-  "width": "container",
-  "height": 350,
-  "background": "transparent",
+  "width": "container", "height": 350, "background": "transparent",
   "data": {"url": "datasets/reasons_for_internet_usage.csv"},
   "encoding": {
     "y": {"field": "Reason", "type": "nominal", "title": "Primary Purpose", "axis": {"labelColor": "#94a3b8", "titleColor": "#94a3b8"}, "sort": {"field": "2016-17_Pct", "order": "descending"}}
@@ -14,14 +12,14 @@
       "encoding": {"x": {"field": "2014-15_Pct", "type": "quantitative"}, "x2": {"field": "2016-17_Pct"}}
     },
     {
-      "mark": {"type": "point", "size": 120, "color": "#f43f5e", "filled": true},
+      "mark": {"type": "point", "size": 120, "color": "#38bdf8", "filled": true},
       "encoding": {
         "x": {"field": "2014-15_Pct", "type": "quantitative", "title": "Percentage of Population (%)", "axis": {"labelColor": "#94a3b8", "titleColor": "#94a3b8", "gridColor": "#334155"}},
         "tooltip": [{"field": "Reason", "type": "nominal"}, {"field": "2014-15_Pct", "type": "quantitative", "title": "2014-15 (%)"}]
       }
     },
     {
-      "mark": {"type": "point", "size": 120, "color": "#10b981", "filled": true},
+      "mark": {"type": "point", "size": 120, "color": "#f59e0b", "filled": true},
       "encoding": {
         "x": {"field": "2016-17_Pct", "type": "quantitative"},
         "tooltip": [{"field": "Reason", "type": "nominal"}, {"field": "2016-17_Pct", "type": "quantitative", "title": "2016-17 (%)"}]
