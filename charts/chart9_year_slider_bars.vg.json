@@ -3,10 +3,9 @@
 
   "title": {
     "text": "Mobile Activities Among Australian Children",
-    "subtitle": "Compare trends in smartphone activities across age groups",
+    "subtitle": "Play Games Usage by Age Group (2015–2020)",
     "color": "#cbd5e1",
-    "subtitleColor": "#94a3b8",
-    "fontSize": 18
+    "subtitleColor": "#94a3b8"
   },
 
   "width": 500,
@@ -15,38 +14,19 @@
   "background": "transparent",
 
   "data": {
-    "url": "datasets/kids_mobile_usage_by_age.csv"
+    "url": "datasets/kids_mobile_usage_by_age.csv",
+    "format": {"type": "csv"}
   },
-
-  "params": [
-    {
-      "name": "activitySelect",
-      "bind": {
-        "input": "select",
-        "options": [
-          "Play games",
-          "Take photos/videos",
-          "Use apps",
-          "Send or receive texts"
-        ],
-        "name": "Activity: "
-      },
-      "value": "Play games"
-    }
-  ],
 
   "transform": [
     {
-      "filter": "datum.Activity == activitySelect"
+      "filter": "datum.Activity == 'Play games'"
     }
   ],
 
   "mark": {
     "type": "line",
-    "point": {
-      "filled": true,
-      "size": 100
-    },
+    "point": true,
     "strokeWidth": 4
   },
 
@@ -54,18 +34,15 @@
     "x": {
       "field": "Year",
       "type": "ordinal",
-      "title": "Year",
       "axis": {
         "labelColor": "#94a3b8",
-        "titleColor": "#94a3b8",
-        "grid": false
+        "titleColor": "#94a3b8"
       }
     },
 
     "y": {
       "field": "Percentage",
       "type": "quantitative",
-      "title": "Participation (%)",
       "axis": {
         "labelColor": "#94a3b8",
         "titleColor": "#94a3b8",
@@ -76,21 +53,16 @@
     "color": {
       "field": "Age_Group",
       "type": "nominal",
-      "scale": {
-        "scheme": "category10"
-      },
       "legend": {
-        "title": "Age Group",
         "labelColor": "#94a3b8",
         "titleColor": "#94a3b8"
       }
     },
 
     "tooltip": [
-      {"field": "Age_Group", "title": "Age Group"},
-      {"field": "Activity"},
+      {"field": "Age_Group"},
       {"field": "Year"},
-      {"field": "Percentage", "format": ".1f"}
+      {"field": "Percentage"}
     ]
   },
 
