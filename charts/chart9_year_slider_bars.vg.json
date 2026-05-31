@@ -60,15 +60,27 @@
     },
 
     "color": {
-      "field": "Age_Group",
-      "type": "nominal",
-      "legend": {
-        "orient": "bottom",
-        "title": "Age Group",
-        "labelColor": "#94a3b8",
-        "titleColor": "#94a3b8"
-      }
-    },
+  "field": "Age_Group",
+  "type": "nominal",
+  "scale": {
+    "domain": [
+      "6-9 year olds",
+      "10-11 year olds",
+      "12-13 year olds"
+    ],
+    "range": [
+      "#ec4899",
+      "#38bdf8",
+      "#f59e0b"
+    ]
+  },
+  "legend": {
+    "orient": "bottom",
+    "title": "Age Group",
+    "labelColor": "#94a3b8",
+    "titleColor": "#94a3b8"
+  }
+},
 
     "tooltip": [
       {
