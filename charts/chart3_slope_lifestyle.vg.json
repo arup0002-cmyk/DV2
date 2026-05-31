@@ -11,7 +11,12 @@
   "encoding": {
     "x": {"field": "Clean_Year", "type": "ordinal", "title": "Financial Year", "axis": {"labelColor": "#94a3b8", "titleColor": "#94a3b8"}},
     "y": {"field": "Percentage", "type": "quantitative", "title": "Population Percentage (%)", "scale": {"domain": [20, 90]}, "axis": {"labelColor": "#94a3b8", "titleColor": "#94a3b8", "gridColor": "#334155"}},
-    "color": {"field": "Reason", "type": "nominal", "scale": {"scheme": "colorblind"}, "legend": {"titleColor": "#94a3b8", "labelColor": "#94a3b8"}},
+    "color": {
+      "field": "Reason", 
+      "type": "nominal", 
+      "scale": {"scheme": "colorblind"}, 
+      "legend": {"titleColor": "#94a3b8", "labelColor": "#94a3b8"}
+    },
     "tooltip": [{"field": "Reason", "type": "nominal"}, {"field": "Clean_Year", "type": "ordinal", "title": "Year"}, {"field": "Percentage", "type": "quantitative", "title": "% of Users"}]
   },
   "config": {"view": {"stroke": "transparent"}}
