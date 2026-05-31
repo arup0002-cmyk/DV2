@@ -1,77 +1,27 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-
-  "title": {
-    "text": "Mobile Phone Ownership Growth Among Children",
-    "color": "#cbd5e1",
-    "fontSize": 18
-  },
-
-  "width": 450,
+  "width": 400,
   "height": 250,
-
   "background": "transparent",
-
   "data": {
     "values": [
-      {"Year": "2015", "Pct": 45, "Age": "6-9"},
-      {"Year": "2020", "Pct": 58, "Age": "6-9"}
+      {"Year": "2015", "Pct": 45},
+      {"Year": "2020", "Pct": 58}
     ]
   },
-
   "mark": {
     "type": "line",
-    "point": {
-      "filled": true,
-      "size": 120,
-      "color": "#38bdf8"
-    },
-    "strokeWidth": 4,
+    "point": true,
     "color": "#38bdf8"
   },
-
   "encoding": {
     "x": {
       "field": "Year",
-      "type": "ordinal",
-      "title": "Year",
-      "axis": {
-        "labelColor": "#94a3b8",
-        "titleColor": "#94a3b8",
-        "grid": false
-      }
+      "type": "ordinal"
     },
-
     "y": {
       "field": "Pct",
-      "type": "quantitative",
-      "title": "Ownership Rate (%)",
-      "scale": {
-        "domain": [40, 65]
-      },
-      "axis": {
-        "labelColor": "#94a3b8",
-        "titleColor": "#94a3b8",
-        "gridColor": "#334155"
-      }
-    },
-
-    "tooltip": [
-      {
-        "field": "Year",
-        "type": "ordinal"
-      },
-      {
-        "field": "Pct",
-        "type": "quantitative",
-        "title": "Ownership (%)"
-      }
-    ]
-  },
-
-  "config": {
-    "view": {
-      "stroke": "transparent"
+      "type": "quantitative"
     }
   }
 }
