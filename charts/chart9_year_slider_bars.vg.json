@@ -11,7 +11,12 @@
   "encoding": {
     "x": {"field": "Activity", "type": "nominal", "title": "Mobile Activity", "axis": {"labelColor": "#94a3b8", "titleColor": "#94a3b8", "labelAngle": -30}},
     "y": {"field": "Percentage", "type": "quantitative", "aggregate": "mean", "title": "Average Engagement (%)", "axis": {"labelColor": "#94a3b8", "titleColor": "#94a3b8", "gridColor": "#334155"}},
-    "color": {"field": "Age_Group", "type": "nominal", "scale": {"scheme": "colorblind"}, "legend": {"titleColor": "#94a3b8", "labelColor": "#94a3b8"}},
+    "color": {
+      "field": "Age_Group", 
+      "type": "nominal", 
+      "scale": {"scheme": "colorblind"}, 
+      "legend": {"titleColor": "#94a3b8", "labelColor": "#94a3b8"}
+    },
     "tooltip": [{"field": "Activity", "type": "nominal"}, {"field": "Age_Group", "type": "nominal"}, {"field": "Percentage", "aggregate": "mean", "type": "quantitative", "title": "Mean Rate (%)", "format": ".1f"}]
   },
   "config": {"view": {"stroke": "transparent"}}
