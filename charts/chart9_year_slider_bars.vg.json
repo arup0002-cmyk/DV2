@@ -1,33 +1,17 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": {"text": "Mobile Activity by Age Group (2020)", "color": "#e2e8f0", "fontSize": 16},
-  "width": 300,
-  "height": 200,
-  "background": "transparent",
+  "width": 350, "height": 250, "background": "transparent",
+  "title": {"text": "Usage Growth", "color": "white"},
   "data": {
     "values": [
-      {"Activity": "Games", "Age": "6-9", "Pct": 45},
-      {"Activity": "Games", "Age": "10-11", "Pct": 55},
-      {"Activity": "Apps", "Age": "6-9", "Pct": 30},
-      {"Activity": "Apps", "Age": "10-11", "Pct": 40}
+      {"Year": "2015", "Pct": 45, "Age": "6-9"}, {"Year": "2020", "Pct": 58, "Age": "6-9"},
+      {"Year": "2015", "Pct": 69, "Age": "12-13"}, {"Year": "2020", "Pct": 82, "Age": "12-13"}
     ]
   },
-  "layer": [
-    {
-      "mark": {"type": "bar", "cornerRadiusTopLeft": 6, "cornerRadiusTopRight": 6, "fill": "#38bdf8"},
-      "encoding": {
-        "x": {"field": "Activity", "type": "nominal", "axis": {"labelColor": "#94a3b8", "titleColor": "#94a3b8"}},
-        "y": {"field": "Pct", "type": "quantitative", "axis": {"gridColor": "#334155", "labelColor": "#94a3b8", "titleColor": "#94a3b8"}}
-      }
-    },
-    {
-      "mark": {"type": "text", "dy": -10, "color": "#ffffff", "fontWeight": "bold"},
-      "encoding": {
-        "x": {"field": "Activity", "type": "nominal"},
-        "y": {"field": "Pct", "type": "quantitative"},
-        "text": {"field": "Pct", "type": "quantitative"}
-      }
-    }
-  ],
-  "config": {"view": {"stroke": "transparent"}}
+  "mark": {"type": "line", "point": true},
+  "encoding": {
+    "x": {"field": "Year", "type": "ordinal", "axis": {"labelColor": "white", "titleColor": "white"}},
+    "y": {"field": "Pct", "type": "quantitative", "axis": {"labelColor": "white", "titleColor": "white", "gridColor": "#334155"}},
+    "color": {"field": "Age", "type": "nominal", "scale": {"scheme": "accent"}}
+  }
 }
