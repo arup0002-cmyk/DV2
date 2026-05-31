@@ -4,8 +4,8 @@
   "width": "container", "height": 350, "background": "transparent",
   "data": {"url": "datasets/reasons_for_internet_usage.csv"},
   "transform": [
-    {"fold": ["2014-15_Pct", "2016-17_Pct"], "as": ["Year", "Percentage"]},
-    {"calculate": "datum.Year == '2014-15_Pct' ? '2014-15' : '2016-17'", "as": "Clean_Year"}
+    {"fold": ["2014-15_Pct", "2016-17_Pct"], "as": ["Period", "Percentage"]},
+    {"calculate": "datum.Period == '2014-15_Pct' ? '2014-15' : '2016-17'", "as": "Clean_Year"}
   ],
   "mark": {"type": "line", "point": {"filled": true, "size": 100}, "strokeWidth": 3},
   "encoding": {
