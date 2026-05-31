@@ -1,6 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 350, "height": 250, "background": "transparent",
+  "width": 350, 
+  "height": 250, 
+  "background": "transparent",
   "title": {"text": "Usage Growth", "color": "white"},
   "data": {
     "values": [
