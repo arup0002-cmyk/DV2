@@ -6,7 +6,7 @@ var vg_5 = "charts/chart5_heatmap_state_activities.vg.json";
 var vg_6 = "charts/chart6_state_selector.vg.json";
 var vg_7 = "charts/chart7_age_trends_lines.vg.json";
 var vg_8 = "charts/chart8_lifestyle_comparison.vg.json";
-var vg_9 = "charts/chart9_year_slider_bars.vg.json";
+var vg_9 = "charts/chart9_polished.vg.json";
 var vg_10 = "charts/chart10_interactive_drilldown.vg.json";
 
 vegaEmbed("#chart1", vg_1);
