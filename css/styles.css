@@ -1,127 +1,126 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
 }
 
-body {
-    background-color: #0f172a;
-    color: white;
-    font-family: Arial, sans-serif;
-    line-height: 1.8;
+body { 
+    background-color: #0f172a; 
+    color: white; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    line-height: 1.6;
 }
 
-.hero-section {
-    height: 60vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.95)), 
-                url('https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c');
+/* --- ENHANCED HERO SECTION --- */
+.hero-section { 
+    min-height: 45vh; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.98)), 
+                url('https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c'); 
     background-size: cover;
     background-position: center;
+    border-bottom: 4px solid #38bdf8;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 1000px;
+    width: 100%;
 }
 
 .hero-content h1 {
-    font-size: 3.5rem;
-    margin-bottom: 20px;
+    font-size: 2.8rem;
+    margin-bottom: 10px;
+    color: #ffffff;
 }
 
 .hero-subtitle {
-    font-size: 1.2rem;
+    font-size: 1.25rem;
+    color: #38bdf8;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.executive-summary {
+    font-size: 1.05rem;
     color: #cbd5e1;
     max-width: 800px;
-    margin: 0 auto;
+    margin: 0 auto 40px auto;
 }
 
-.container {
-    width: 85%;
-    max-width: 1400px;
-    margin: 0 auto;
-}
-
-.content-section {
-    padding: 80px 0;
-}
-
-.section-header {
-    margin: 60px 0 30px 0;
-    border-left: 4px solid #38bdf8;
-    padding-left: 15px;
-}
-
-.section-header h2 {
-    font-size: 2.2rem;
-    margin-bottom: 10px;
-}
-
-.section-header p {
-    color: #cbd5e1;
-    max-width: 900px;
-}
-
-.chart-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-}
-
-.full-width {
-    grid-column: 1 / -1;
-}
-
-.chart-card {
-    background-color: #1e293b;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.vis-container {
-    width: 100%;
+/* --- KPI CARDS STYLE --- */
+.kpi-container {
     display: flex;
     justify-content: center;
-    overflow-x: auto;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
-.storytelling-text {
-    margin-top: 20px;
-    padding-top: 20px;
-    border-top: 1px solid #334155;
-    color: #cbd5e1;
-    font-size: 0.95rem;
-    width: 100%;
-    text-align: left;
+.kpi-card {
+    background: rgba(30, 41, 59, 0.7);
+    border: 1px solid #334155;
+    border-top: 3px solid #38bdf8;
+    border-radius: 8px;
+    padding: 20px;
+    min-width: 220px;
+    flex: 1;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
-.storytelling-text strong {
-    color: #38bdf8;
+.kpi-value {
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 5px;
 }
 
-footer {
-    background-color: #020617;
-    padding: 40px 0;
-    margin-top: 60px;
-}
-
-.footer-content {
-    display: flex;
-    justify-content: space-between;
+.kpi-label {
+    font-size: 0.85rem;
     color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
+/* --- MAIN DASHBOARD LAYOUT --- */
+.container { 
+    width: 90%; 
+    max-width: 1300px; 
+    margin: 50px auto; 
+}
+
+.chart-grid { 
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    gap: 30px; 
+}
+
+.full-width { 
+    grid-column: 1 / -1; 
+}
+
+.chart-card { 
+    background: #1e293b; 
+    padding: 25px; 
+    border-radius: 12px; 
+    display: flex; 
+    justify-content: center; 
+    overflow: hidden;
+    border: 1px solid #334155;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+}
+
+.vis-container { 
+    width: 100%; 
+    display: flex; 
+    justify-content: center; 
+}
+
+/* --- RESPONSIVE DESIGN FOR SMALL SCREENS --- */
 @media screen and (max-width: 950px) {
-    .chart-grid {
-        grid-template-columns: 1fr;
-    }
-    .hero-content h1 {
-        font-size: 2.5rem;
-    }
-    .container {
-        width: 92%;
-    }
+    .chart-grid { grid-template-columns: 1fr; }
+    .kpi-container { flex-direction: column; }
+    .hero-content h1 { font-size: 2.2rem; }
 }
