@@ -10,13 +10,11 @@
     "column": {"field": "Age_Group", "type": "nominal", "title": null, "header": {"labelColor": "#cbd5e1", "labelFontSize": 14}}
   },
   "spec": {
-    "width": 120,
-    "height": 280,
-    "mark": "area",
+    "width": 120, "height": 280, "mark": "area",
     "encoding": {
       "x": {"field": "Year", "type": "quantitative", "axis": {"format": "d", "labelColor": "#94a3b8", "titleColor": "#94a3b8", "grid": false}},
       "y": {"field": "Percentage", "type": "quantitative", "stack": "normalize", "axis": {"labelColor": "#94a3b8", "titleColor": "#94a3b8", "gridColor": "#334155"}},
-      "color": {"field": "Activity", "type": "nominal", "scale": {"range": ["#f43f5e", "#3b82f6", "#10b981"]}, "legend": {"titleColor": "#94a3b8", "labelColor": "#94a3b8", "orient": "bottom"}},
+      "color": {"field": "Activity", "type": "nominal", "scale": {"range": ["#E69F00", "#56B4E9", "#CC79A7"]}, "legend": {"titleColor": "#94a3b8", "labelColor": "#94a3b8", "orient": "bottom"}},
       "tooltip": [{"field": "Year", "type": "quantitative"}, {"field": "Activity", "type": "nominal"}, {"field": "Percentage", "type": "quantitative", "format": ".1f"}]
     }
   },
