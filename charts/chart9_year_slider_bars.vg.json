@@ -6,7 +6,7 @@
   "params": [
     {"name": "Select_Year", "value": 2020, "bind": {"input": "range", "min": 2015, "max": 2020, "step": 1, "name": "Timeline Slider: "}}
   ],
-  "transform": [{"filter": "datum.Year == Select_Year"}],
+  "transform": [{"filter": "toNumber(datum.Year) == Select_Year"}],
   "mark": "bar",
   "encoding": {
     "x": {"field": "Activity", "type": "nominal", "title": "Mobile Activity", "axis": {"labelColor": "#94a3b8", "titleColor": "#94a3b8", "labelAngle": -30}},
