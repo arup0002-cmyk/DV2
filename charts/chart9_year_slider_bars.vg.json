@@ -1,13 +1,15 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 350, 
-  "height": 250, 
+  "width": 300,
+  "height": 200,
   "background": "transparent",
   "title": {"text": "Usage Growth", "color": "white"},
   "data": {
     "values": [
-      {"Year": "2015", "Pct": 45, "Age": "6-9"}, {"Year": "2020", "Pct": 58, "Age": "6-9"},
-      {"Year": "2015", "Pct": 69, "Age": "12-13"}, {"Year": "2020", "Pct": 82, "Age": "12-13"}
+      {"Year": "2015", "Pct": 45, "Age": "6-9"}, 
+      {"Year": "2020", "Pct": 58, "Age": "6-9"},
+      {"Year": "2015", "Pct": 69, "Age": "12-13"}, 
+      {"Year": "2020", "Pct": 82, "Age": "12-13"}
     ]
   },
   "mark": {"type": "line", "point": true},
