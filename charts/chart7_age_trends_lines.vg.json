@@ -1,49 +1,30 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {"text": "Growth Trajectory of Habits Over Time", "color": "#cbd5e1"},
-  "width": "container",
+  "width": 350,
   "height": 300,
   "background": "transparent",
-  "data": {"url": "datasets/kids_mobile_usage_by_age.csv"},
-  "params": [
-    {
-      "name": "Age_Filter",
-      "value": "12-13 year olds",
-      "bind": {
-        "input": "select",
-        "options": ["6-9 year olds", "10-11 year olds", "12-13 year olds"],
-        "name": "Select Age Group: "
-      }
-    }
-  ],
-  "transform": [
-    {"filter": "datum.Age_Group == Age_Filter"}
-  ],
+  "data": {
+    "values": [
+      {"Year": 2015, "Activity": "Games", "Percentage": 40},
+      {"Year": 2016, "Activity": "Games", "Percentage": 45},
+      {"Year": 2017, "Activity": "Games", "Percentage": 50},
+      {"Year": 2018, "Activity": "Games", "Percentage": 55},
+      {"Year": 2019, "Activity": "Games", "Percentage": 60},
+      {"Year": 2020, "Activity": "Games", "Percentage": 65},
+      {"Year": 2015, "Activity": "Apps", "Percentage": 30},
+      {"Year": 2016, "Activity": "Apps", "Percentage": 35},
+      {"Year": 2017, "Activity": "Apps", "Percentage": 40},
+      {"Year": 2018, "Activity": "Apps", "Percentage": 45},
+      {"Year": 2019, "Activity": "Apps", "Percentage": 50},
+      {"Year": 2020, "Activity": "Apps", "Percentage": 55}
+    ]
+  },
   "mark": {"type": "line", "point": true, "strokeWidth": 3},
   "encoding": {
-    "x": {
-      "field": "Year",
-      "type": "ordinal",
-      "title": "Year",
-      "axis": {"labelColor": "#94a3b8", "titleColor": "#94a3b8"}
-    },
-    "y": {
-      "field": "Percentage",
-      "type": "quantitative",
-      "title": "Participation (%)",
-      "axis": {"labelColor": "#94a3b8", "titleColor": "#94a3b8", "gridColor": "#334155"}
-    },
-    "color": {
-      "field": "Activity",
-      "type": "nominal",
-      "scale": {"scheme": "set2"},
-      "legend": {"titleColor": "#94a3b8", "labelColor": "#94a3b8"}
-    },
-    "tooltip": [
-      {"field": "Activity", "type": "nominal"},
-      {"field": "Year", "type": "ordinal"},
-      {"field": "Percentage", "type": "quantitative", "format": ".1f"}
-    ]
+    "x": {"field": "Year", "type": "ordinal", "title": "Year", "axis": {"labelColor": "#94a3b8", "titleColor": "#94a3b8"}},
+    "y": {"field": "Percentage", "type": "quantitative", "title": "Participation (%)", "axis": {"labelColor": "#94a3b8", "titleColor": "#94a3b8", "gridColor": "#334155"}},
+    "color": {"field": "Activity", "type": "nominal", "scale": {"scheme": "set2"}, "legend": {"titleColor": "#94a3b8", "labelColor": "#94a3b8"}}
   },
   "config": {"view": {"stroke": "transparent"}}
 }
