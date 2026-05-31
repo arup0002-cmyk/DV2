@@ -120,3 +120,7 @@ body {
     .kpi-container { flex-direction: column; }
     .hero-content h1 { font-size: 2.2rem; }
 }
+
+.chart-card {
+    min-height: 420px;
+}
