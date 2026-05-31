@@ -17,5 +17,5 @@ vegaEmbed("#chart5", vg_5);
 vegaEmbed("#chart6", vg_6);
 vegaEmbed("#chart7", vg_7);
 vegaEmbed("#chart8", vg_8);
-vegaEmbed("#chart9", vg_9).catch(console.error);
+vegaEmbed("#chart9", vg_9);
 vegaEmbed("#chart10", vg_10);
