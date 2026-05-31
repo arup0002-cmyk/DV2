@@ -1,5 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "name": "chart9_year_slider_bars",
   "title": {
     "text": "Usage Growth",
     "color": "#e2e8f0",
@@ -21,20 +22,12 @@
     "x": {
       "field": "Year",
       "type": "ordinal",
-      "axis": {
-        "labelColor": "#94a3b8",
-        "titleColor": "#94a3b8",
-        "grid": false
-      }
+      "axis": {"labelColor": "#94a3b8", "titleColor": "#94a3b8", "grid": false}
     },
     "y": {
       "field": "Pct",
       "type": "quantitative",
-      "axis": {
-        "labelColor": "#94a3b8",
-        "titleColor": "#94a3b8",
-        "gridColor": "#334155"
-      }
+      "axis": {"labelColor": "#94a3b8", "titleColor": "#94a3b8", "gridColor": "#334155"}
     },
     "color": {
       "field": "Age",
@@ -43,7 +36,5 @@
       "legend": {"labelColor": "#94a3b8", "titleColor": "#94a3b8"}
     }
   },
-  "config": {
-    "view": {"stroke": "transparent"}
-  }
+  "config": {"view": {"stroke": "transparent"}}
 }
