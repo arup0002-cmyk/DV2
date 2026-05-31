@@ -1,17 +1,49 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 300,
+  "title": {
+    "text": "Usage Growth",
+    "color": "#e2e8f0",
+    "fontSize": 14
+  },
+  "width": "container",
   "height": 200,
+  "background": "transparent",
   "data": {
     "values": [
       {"Year": "2015", "Pct": 45, "Age": "6-9"}, 
-      {"Year": "2020", "Pct": 58, "Age": "6-9"}
+      {"Year": "2020", "Pct": 58, "Age": "6-9"},
+      {"Year": "2015", "Pct": 69, "Age": "12-13"}, 
+      {"Year": "2020", "Pct": 82, "Age": "12-13"}
     ]
   },
-  "mark": {"type": "line", "point": true},
+  "mark": {"type": "line", "point": {"filled": true, "size": 60}, "strokeWidth": 3},
   "encoding": {
-    "x": {"field": "Year", "type": "ordinal", "axis": {"labelColor": "white", "titleColor": "white"}},
-    "y": {"field": "Pct", "type": "quantitative", "axis": {"labelColor": "white", "titleColor": "white"}},
-    "color": {"field": "Age", "type": "nominal"}
+    "x": {
+      "field": "Year",
+      "type": "ordinal",
+      "axis": {
+        "labelColor": "#94a3b8",
+        "titleColor": "#94a3b8",
+        "grid": false
+      }
+    },
+    "y": {
+      "field": "Pct",
+      "type": "quantitative",
+      "axis": {
+        "labelColor": "#94a3b8",
+        "titleColor": "#94a3b8",
+        "gridColor": "#334155"
+      }
+    },
+    "color": {
+      "field": "Age",
+      "type": "nominal",
+      "scale": {"scheme": "set2"},
+      "legend": {"labelColor": "#94a3b8", "titleColor": "#94a3b8"}
+    }
+  },
+  "config": {
+    "view": {"stroke": "transparent"}
   }
 }
