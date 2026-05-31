@@ -1,5 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {"text": "Comparing Mobile Activities Across States (2020)", "color": "#cbd5e1"},
   "width": "container",
   "height": 300,
   "background": "transparent",
