@@ -1,9 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {"text": "Lifestyle Intensity Metric Drill-Down", "color": "#cbd5e1"},
-  "width": "container",
-  "height": 300,
-  "background": "transparent",
+  "width": "container", "height": 300, "background": "transparent",
   "data": {"url": "datasets/reasons_for_internet_usage.csv"},
   "params": [{"name": "highlight", "select": {"type": "point", "on": "mouseover"}}],
   "mark": {"type": "bar", "stroke": "white", "cursor": "pointer"},
@@ -12,7 +10,7 @@
     "y": {"field": "Reason", "type": "nominal", "title": null, "axis": {"labelColor": "#94a3b8"}},
     "fillOpacity": {"condition": {"param": "highlight", "value": 1}, "value": 0.4},
     "strokeWidth": {"condition": {"param": "highlight", "empty": false, "value": 2}, "value": 0},
-    "color": {"field": "Reason", "type": "nominal", "scale": {"scheme": "dark2"}, "legend": null},
+    "color": {"field": "Reason", "type": "nominal", "scale": {"scheme": "colorblind"}, "legend": null},
     "tooltip": [{"field": "Reason", "type": "nominal", "title": "Activity"}, {"field": "2016-17_Pct", "type": "quantitative", "title": "Usage (%)"}]
   },
   "config": {"view": {"stroke": "transparent"}}
