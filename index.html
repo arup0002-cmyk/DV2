@@ -2,143 +2,60 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>How Smartphone Usage Differs Across Australians</title>
-
+    <title>Smartphone Usage Dashboard</title>
     <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
-
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-
+    
     <section class="hero-section">
         <div class="hero-content">
             <h1>Smartphone & Internet Usage in Australia</h1>
             <p class="hero-subtitle">
                 Exploring how age, location, and lifestyle shape digital connectivity.
             </p>
+            
+            <p class="executive-summary">
+                This dashboard investigates the digital divide across Australia. By analyzing historical data and youth metrics, we explore how urbanization dictates internet access, why lifestyle priorities are shifting toward mobile entertainment, and how the youngest generations are natively adapting to app-based ecosystems.
+            </p>
+
+            <div class="kpi-container">
+                <div class="kpi-card">
+                    <div class="kpi-value">94.7%</div>
+                    <div class="kpi-label">National Internet Penetration</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-value">Entertainment</div>
+                    <div class="kpi-label">Dominant Digital Lifestyle</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-value">12-13 Yrs</div>
+                    <div class="kpi-label">Peak Mobile Adoption Age</div>
+                </div>
+            </div>
+
         </div>
     </section>
 
     <section class="content-section">
         <div class="container">
-
-            <div class="section-header">
-                <h2>The Rise of Connectivity</h2>
-                <p>Internet access has grown dramatically across Australia over the last few decades. This historical trajectory sets the foundation for how mobile devices dictate contemporary life.</p>
-            </div>
-            
             <div class="chart-grid">
-                <div class="chart-card full-width">
-                    <div id="chart1" class="vis-container"></div>
-                </div>
+                <div class="chart-card full-width"><div id="chart1" class="vis-container"></div></div>
+                <div class="chart-card"><div id="chart2" class="vis-container"></div></div>
+                <div class="chart-card"><div id="chart3" class="vis-container"></div></div>
+                <div class="chart-card"><div id="chart4" class="vis-container"></div></div>
+                <div class="chart-card"><div id="chart5" class="vis-container"></div></div>
+                <div class="chart-card"><div id="chart6" class="vis-container"></div></div>
+                <div class="chart-card"><div id="chart7" class="vis-container"></div></div>
+                <div class="chart-card"><div id="chart8" class="vis-container"></div></div>
+                <div class="chart-card"><div id="chart9" class="vis-container"></div></div>
+                <div class="chart-card"><div id="chart10" class="vis-container"></div></div>
             </div>
-
-            <div class="section-header">
-                <h2>Location: The Digital Divide</h2>
-                <p>Where you live in Australia influences digital exposure. Looking at youth metrics reveals how regional infrastructure changes daily usage rates.</p>
-            </div>
-
-            <div class="chart-grid">
-                <div class="chart-card">
-                    <div id="chart2" class="vis-container"></div>
-                    <div class="storytelling-text">
-                        <strong>Regional Access:</strong> Notice how geographic boundaries create variations in mobile internet adoption across the continent.
-                    </div>
-                </div>
-                <div class="chart-card">
-                    <div id="chart5" class="vis-container"></div>
-                    <div class="storytelling-text">
-                        <strong>Activity Density:</strong> Western Australia and Victoria showcase intense engagement across recreational applications.
-                    </div>
-                </div>
-            </div>
-
-            <div class="section-header">
-                <h2>Deep Dive into State Profiles</h2>
-                <p>Select specific device behaviors using the control filter below to contrast state-by-state participation levels.</p>
-            </div>
-
-            <div class="chart-grid">
-                <div class="chart-card full-width">
-                    <div id="chart6" class="vis-container"></div>
-                    <div class="storytelling-text">
-                        <strong>Interactive Exploration:</strong> Use this filter to discover unique localized quirks in how messaging or utility behaviors peak.
-                    </div>
-                </div>
-            </div>
-
-            <div class="section-header">
-                <h2>Lifestyle & Habits: Shifting Priorities</h2>
-                <p>A smartphone is an interface for a modern lifestyle. The primary purpose of digital interaction reflects a shift toward mobile utilities.</p>
-            </div>
-
-            <div class="chart-grid">
-                <div class="chart-card">
-                    <div id="chart3" class="vis-container"></div>
-                    <div class="storytelling-text">
-                        <strong>Macro Shift Dynamics:</strong> The dramatic shifts in health services and transaction banking confirm mobile reliance.
-                    </div>
-                </div>
-                <div class="chart-card">
-                    <div id="chart8" class="vis-container"></div>
-                    <div class="storytelling-text">
-                        <strong>Growth Margins:</strong> Entertainment and transactional fields grew the absolute fastest over short chronological intervals.
-                    </div>
-                </div>
-            </div>
-
-            <div class="section-header">
-                <h2>Age: Growing Up Digital</h2>
-                <p>Age remains the strongest indicator of mobile behavior. Tracking generational habits highlights a clear development curve.</p>
-            </div>
-
-            <div class="chart-grid">
-                <div class="chart-card">
-                    <div id="chart4" class="vis-container"></div>
-                    <div class="storytelling-text">
-                        <strong>Structural Evolution:</strong> As youth enter high school age brackets, data streams change from games to structured applications.
-                    </div>
-                </div>
-                <div class="chart-card">
-                    <div id="chart7" class="vis-container"></div>
-                    <div class="storytelling-text">
-                        <strong>Temporal Projections:</strong> Isolating individual user age groups reveals that adolescent smartphone behaviors stabilize rapidly.
-                    </div>
-                </div>
-            </div>
-
-            <div class="section-header">
-                <h2>Chronological Profiles & Intensity</h2>
-                <p>Our final analytical tier isolates behavioral intensity variations to inspect how modern adoption operates.</p>
-            </div>
-
-            <div class="chart-grid">
-                <div class="chart-card">
-                    <div id="chart9" class="vis-container"></div>
-                    <div class="storytelling-text">
-                        <strong>Cross-Sectional Timeline:</strong> Drag the time range bar to observe how age profiles scale across a multi-year period.
-                    </div>
-                </div>
-                <div class="chart-card">
-                    <div id="chart10" class="vis-container"></div>
-                    <div class="storytelling-text">
-                        <strong>Adoption Hierarchy:</strong> Hover over any lifestyle block to uncover the precise hierarchy where messaging services dominate.
-                    </div>
-                </div>
-            </div>
-
         </div>
     </section>
-
-    <footer>
-        <div class="container footer-content">
-            <p>FIT2179 Data Visualisation 2</p>
-        </div>
-    </footer>
 
     <script src="js/vega_lite_vis.js"></script>
 
