@@ -1,5 +1,5 @@
 {
-  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "$schema": "charts/chart3_slope_lifestyle.vg.json",
   "title": {"text": "Shift in Lifestyle Reasons for Internet Usage (2014 vs 2016)", "color": "#cbd5e1"},
   "width": "container", 
   "height": 350, 
