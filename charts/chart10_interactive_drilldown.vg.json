@@ -1,17 +1,19 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 350, "height": 250, "background": "transparent",
-  "title": {"text": "Intensity Metric", "color": "white"},
-  "data": {
-    "values": [
-      {"Reason": "Health", "Pct": 46}, {"Reason": "Ent", "Pct": 80},
-      {"Reason": "Shop", "Pct": 72}, {"Reason": "Social", "Pct": 79}
-    ]
-  },
-  "mark": {"type": "point", "size": 200, "filled": true},
+  "title": {"text": "Lifestyle Intensity Metric Drill-Down", "color": "#cbd5e1"},
+  "width": "container",
+  "height": 300,
+  "background": "transparent",
+  "data": {"url": "datasets/reasons_for_internet_usage.csv"},
+  "params": [{"name": "highlight", "select": {"type": "point", "on": "mouseover"}}],
+  "mark": {"type": "bar", "stroke": "white", "cursor": "pointer"},
   "encoding": {
-    "x": {"field": "Reason", "type": "nominal", "axis": {"labelColor": "white", "titleColor": "white"}},
-    "y": {"field": "Pct", "type": "quantitative", "axis": {"labelColor": "white", "titleColor": "white", "gridColor": "#334155"}},
-    "color": {"field": "Reason", "type": "nominal"}
-  }
+    "x": {"field": "2016-17_Pct", "type": "quantitative", "title": "Modern Adoption Level (%)", "axis": {"labelColor": "#94a3b8", "titleColor": "#94a3b8", "gridColor": "#334155"}},
+    "y": {"field": "Reason", "type": "nominal", "title": null, "axis": {"labelColor": "#94a3b8"}},
+    "fillOpacity": {"condition": {"param": "highlight", "value": 1}, "value": 0.4},
+    "strokeWidth": {"condition": {"param": "highlight", "empty": false, "value": 2}, "value": 0},
+    "color": {"field": "Reason", "type": "nominal", "scale": {"scheme": "dark2"}, "legend": null},
+    "tooltip": [{"field": "Reason", "type": "nominal", "title": "Activity"}, {"field": "2016-17_Pct", "type": "quantitative", "title": "Usage (%)"}]
+  },
+  "config": {"view": {"stroke": "transparent"}}
 }
