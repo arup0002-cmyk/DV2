@@ -1,0 +1,18 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {"text": "Mobile Activity by Age Bracket", "color": "#e2e8f0"},
+  "width": 150,
+  "height": 200,
+  "background": "transparent",
+  "data": {"url": "datasets/kids_mobile_usage_by_age.csv"},
+  "facet": {"field": "Age_Group", "type": "nominal", "header": {"titleColor": "#94a3b8", "labelColor": "#94a3b8"}},
+  "spec": {
+    "mark": "bar",
+    "encoding": {
+      "x": {"field": "Activity", "type": "nominal", "axis": {"labelColor": "#94a3b8", "titleColor": "#94a3b8", "labelAngle": -45}},
+      "y": {"field": "Percentage", "type": "quantitative", "axis": {"gridColor": "#334155", "labelColor": "#94a3b8", "titleColor": "#94a3b8"}},
+      "color": {"field": "Activity", "type": "nominal", "scale": {"scheme": "set2"}}
+    }
+  },
+  "config": {"view": {"stroke": "transparent"}}
+}
