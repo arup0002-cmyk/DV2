@@ -1,29 +1,20 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": {"text": "Mobile Activity by Age Group (2020)", "color": "#cbd5e1"},
-  "width": 350,
-  "height": 300,
-  "background": "transparent",
+  "description": "Simplified Chart 9",
+  "width": 300,
+  "height": 200,
   "data": {
     "values": [
-      {"Activity": "Games", "Age_Group": "6-9", "Percentage": 45},
-      {"Activity": "Games", "Age_Group": "10-11", "Percentage": 55},
-      {"Activity": "Apps", "Age_Group": "6-9", "Percentage": 30},
-      {"Activity": "Apps", "Age_Group": "10-11", "Percentage": 40},
-      {"Activity": "Texts", "Age_Group": "6-9", "Percentage": 20},
-      {"Activity": "Texts", "Age_Group": "10-11", "Percentage": 50}
+      {"Activity": "Games", "Age": "6-9", "Value": 45},
+      {"Activity": "Games", "Age": "10-11", "Percentage": 55},
+      {"Activity": "Apps", "Age": "6-9", "Value": 30},
+      {"Activity": "Apps", "Age": "10-11", "Percentage": 40}
     ]
   },
   "mark": "bar",
   "encoding": {
-    "x": {"field": "Activity", "type": "nominal", "axis": {"labelColor": "#94a3b8", "titleColor": "#94a3b8"}},
-    "y": {"field": "Percentage", "type": "quantitative", "axis": {"labelColor": "#94a3b8", "titleColor": "#94a3b8"}},
-    "color": {
-      "field": "Age_Group",
-      "type": "nominal",
-      "scale": {"scheme": "set2"},
-      "legend": {"titleColor": "#94a3b8", "labelColor": "#94a3b8"}
-    }
-  },
-  "config": {"view": {"stroke": "transparent"}}
+    "x": {"field": "Activity", "type": "nominal"},
+    "y": {"field": "Value", "type": "quantitative"},
+    "color": {"field": "Age", "type": "nominal", "scale": {"scheme": "set2"}}
+  }
 }
