@@ -1,0 +1,15 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {"text": "State-Level Activity Intensity", "color": "#e2e8f0"},
+  "width": 300,
+  "height": 200,
+  "background": "transparent",
+  "data": {"url": "datasets/kids_mobile_usage_by_state_2020.csv"},
+  "mark": "rect",
+  "encoding": {
+    "x": {"field": "Activity", "type": "nominal", "axis": {"labelColor": "#94a3b8", "titleColor": "#94a3b8", "labelAngle": -45}},
+    "y": {"field": "State_Group", "type": "nominal", "axis": {"labelColor": "#94a3b8", "titleColor": "#94a3b8"}},
+    "color": {"field": "Percentage", "type": "quantitative", "scale": {"scheme": "blues"}, "legend": {"labelColor": "#94a3b8", "titleColor": "#94a3b8"}}
+  },
+  "config": {"view": {"stroke": "transparent"}}
+}
