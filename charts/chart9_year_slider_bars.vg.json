@@ -1,23 +1,29 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": {"text": "Cross-Sectional Activity Demographics by Year", "color": "#cbd5e1"},
-  "width": "container", "height": 300, "background": "transparent",
-  "data": {"url": "datasets/kids_mobile_usage_by_age.csv"},
-  "params": [
-    {"name": "Select_Year", "value": 2020, "bind": {"input": "range", "min": 2015, "max": 2020, "step": 1, "name": "Timeline Slider: "}}
-  ],
-  "transform": [{"filter": "toNumber(datum.Year) == Select_Year"}],
+  "title": {"text": "Mobile Activity by Age Group (2020)", "color": "#cbd5e1"},
+  "width": 350,
+  "height": 300,
+  "background": "transparent",
+  "data": {
+    "values": [
+      {"Activity": "Games", "Age_Group": "6-9", "Percentage": 45},
+      {"Activity": "Games", "Age_Group": "10-11", "Percentage": 55},
+      {"Activity": "Apps", "Age_Group": "6-9", "Percentage": 30},
+      {"Activity": "Apps", "Age_Group": "10-11", "Percentage": 40},
+      {"Activity": "Texts", "Age_Group": "6-9", "Percentage": 20},
+      {"Activity": "Texts", "Age_Group": "10-11", "Percentage": 50}
+    ]
+  },
   "mark": "bar",
   "encoding": {
-    "x": {"field": "Activity", "type": "nominal", "title": "Mobile Activity", "axis": {"labelColor": "#94a3b8", "titleColor": "#94a3b8", "labelAngle": -30}},
-    "y": {"field": "Percentage", "type": "quantitative", "aggregate": "mean", "title": "Average Engagement (%)", "axis": {"labelColor": "#94a3b8", "titleColor": "#94a3b8", "gridColor": "#334155"}},
+    "x": {"field": "Activity", "type": "nominal", "axis": {"labelColor": "#94a3b8", "titleColor": "#94a3b8"}},
+    "y": {"field": "Percentage", "type": "quantitative", "axis": {"labelColor": "#94a3b8", "titleColor": "#94a3b8"}},
     "color": {
-      "field": "Age_Group", 
-      "type": "nominal", 
-      "scale": {"scheme": "colorblind"}, 
+      "field": "Age_Group",
+      "type": "nominal",
+      "scale": {"scheme": "set2"},
       "legend": {"titleColor": "#94a3b8", "labelColor": "#94a3b8"}
-    },
-    "tooltip": [{"field": "Activity", "type": "nominal"}, {"field": "Age_Group", "type": "nominal"}, {"field": "Percentage", "aggregate": "mean", "type": "quantitative", "title": "Mean Rate (%)", "format": ".1f"}]
+    }
   },
   "config": {"view": {"stroke": "transparent"}}
 }
