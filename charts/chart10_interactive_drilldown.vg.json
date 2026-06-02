@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": {"text": "Lifestyle Intensity Metric Drill-Down", "color": "#cbd5e1"},
+  "title": {"text": "Explore Activities by Age Group", "color": "#cbd5e1", "fontSize": 18},
   "width": "container",
   "height": 300,
   "background": "transparent",
