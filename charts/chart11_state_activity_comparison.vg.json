@@ -2,32 +2,67 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
 
   "title": {
-    "text": "Mobile Activities Across Australian States",
-    "subtitle": "Comparing smartphone behaviour by region",
+    "text": "Popular Smartphone Activities Across Australian States",
+    "subtitle": "Top mobile activities among children (2020)",
     "color": "#cbd5e1",
-    "subtitleColor": "#94a3b8"
+    "subtitleColor": "#94a3b8",
+    "fontSize": 18
   },
 
-  "width": 600,
+  "width": 500,
   "height": 320,
 
   "background": "transparent",
 
   "data": {
     "url": "datasets/kids_mobile_usage_by_state_2020.csv",
-    "format": {"type": "csv"}
+    "format": {
+      "type": "csv"
+    }
   },
+
+  "transform": [
+    {
+      "filter": {
+        "field": "Activity",
+        "oneOf": [
+          "Play games",
+          "Take photos/videos",
+          "Use apps",
+          "Send or receive texts"
+        ]
+      }
+    }
+  ],
 
   "mark": {
     "type": "bar",
-    "cornerRadiusEnd": 4
+    "cornerRadius": 4,
+    "size": 16
   },
 
   "encoding": {
     "x": {
+      "field": "State_Group",
+      "type": "nominal",
+      "title": "State / Territory Group",
+      "axis": {
+        "labelColor": "#94a3b8",
+        "titleColor": "#94a3b8"
+      }
+    },
+
+    "xOffset": {
+      "field": "Activity"
+    },
+
+    "y": {
       "field": "Percentage",
       "type": "quantitative",
       "title": "Participation Rate (%)",
+      "scale": {
+        "domain": [0, 80]
+      },
       "axis": {
         "labelColor": "#94a3b8",
         "titleColor": "#94a3b8",
@@ -35,37 +70,54 @@
       }
     },
 
-    "y": {
-      "field": "State",
-      "type": "nominal",
-      "sort": "-x",
-      "title": "State",
-      "axis": {
-        "labelColor": "#94a3b8",
-        "titleColor": "#94a3b8"
-      }
-    },
-
     "color": {
       "field": "Activity",
       "type": "nominal",
+      "scale": {
+        "domain": [
+          "Play games",
+          "Take photos/videos",
+          "Use apps",
+          "Send or receive texts"
+        ],
+        "range": [
+          "#38bdf8",
+          "#f472b6",
+          "#a78bfa",
+          "#f59e0b"
+        ]
+      },
       "legend": {
         "orient": "bottom",
+        "columns": 2,
         "labelColor": "#94a3b8",
         "titleColor": "#94a3b8"
       }
     },
 
     "tooltip": [
-      {"field": "State"},
-      {"field": "Activity"},
-      {"field": "Percentage"}
+      {
+        "field": "State_Group",
+        "title": "State"
+      },
+      {
+        "field": "Activity"
+      },
+      {
+        "field": "Percentage",
+        "title": "Participation (%)",
+        "format": ".1f"
+      }
     ]
   },
 
   "config": {
     "view": {
       "stroke": "transparent"
+    },
+    "axis": {
+      "labelFontSize": 11,
+      "titleFontSize": 12
     }
   }
 }
