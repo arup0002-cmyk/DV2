@@ -1,56 +1,132 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+
   "title": {
-    "text": "Kids' Internet Access by Region (2020)",
-    "subtitle": "Percentage of children accessing the internet via mobile devices",
+    "text": "Regional Differences in Children's Internet Access (2020)",
+    "subtitle": "Mobile internet access rates vary across Australian regions",
     "subtitleColor": "#94a3b8",
     "color": "#cbd5e1"
   },
+
   "width": "container",
   "height": 450,
   "background": "transparent",
-  "projection": {"type": "mercator"},
-  "data": {
-    "url": "https://raw.githubusercontent.com/rowanhogan/australian-states/master/states.geojson",
-    "format": {"type": "json", "property": "features"}
+
+  "projection": {
+    "type": "mercator"
   },
-  "transform": [
+
+  "layer": [
     {
-      "calculate": "datum.properties.STATE_NAME == 'New South Wales' || datum.properties.STATE_NAME == 'Australian Capital Territory' ? 'NSW/ACT' : datum.properties.STATE_NAME == 'Victoria' || datum.properties.STATE_NAME == 'Tasmania' ? 'Vic/Tas' : datum.properties.STATE_NAME == 'Queensland' ? 'Qld' : datum.properties.STATE_NAME == 'South Australia' || datum.properties.STATE_NAME == 'Northern Territory' ? 'SA/NT' : datum.properties.STATE_NAME == 'Western Australia' ? 'WA' : 'Other'",
-      "as": "State_Group"
-    },
-    {
-      "lookup": "State_Group",
-      "from": {
-        "data": {
-          "values": [
-            {"State_Group": "NSW/ACT", "Percentage": 93.5},
-            {"State_Group": "Vic/Tas", "Percentage": 94.2},
-            {"State_Group": "Qld", "Percentage": 91.8},
-            {"State_Group": "SA/NT", "Percentage": 89.5},
-            {"State_Group": "WA", "Percentage": 92.1}
-          ]
+      "data": {
+        "url": "https://raw.githubusercontent.com/rowanhogan/australian-states/master/states.geojson",
+        "format": {
+          "type": "json",
+          "property": "features"
+        }
+      },
+
+      "transform": [
+        {
+          "calculate": "datum.properties.STATE_NAME == 'New South Wales' || datum.properties.STATE_NAME == 'Australian Capital Territory' ? 'NSW/ACT' : datum.properties.STATE_NAME == 'Victoria' || datum.properties.STATE_NAME == 'Tasmania' ? 'Vic/Tas' : datum.properties.STATE_NAME == 'Queensland' ? 'Qld' : datum.properties.STATE_NAME == 'South Australia' || datum.properties.STATE_NAME == 'Northern Territory' ? 'SA/NT' : datum.properties.STATE_NAME == 'Western Australia' ? 'WA' : 'Other'",
+          "as": "State_Group"
         },
-        "key": "State_Group",
-        "fields": ["Percentage"]
+        {
+          "lookup": "State_Group",
+          "from": {
+            "data": {
+              "values": [
+                {"State_Group": "NSW/ACT", "Percentage": 93.5},
+                {"State_Group": "Vic/Tas", "Percentage": 94.2},
+                {"State_Group": "Qld", "Percentage": 91.8},
+                {"State_Group": "SA/NT", "Percentage": 89.5},
+                {"State_Group": "WA", "Percentage": 92.1}
+              ]
+            },
+            "key": "State_Group",
+            "fields": ["Percentage"]
+          }
+        }
+      ],
+
+      "mark": {
+        "type": "geoshape",
+        "stroke": "#1e293b",
+        "strokeWidth": 1
+      },
+
+      "encoding": {
+        "color": {
+          "field": "Percentage",
+          "type": "quantitative",
+          "scale": {
+            "scheme": "blues"
+          },
+          "title": "Internet Access (%)",
+          "legend": {
+            "titleColor": "#94a3b8",
+            "labelColor": "#94a3b8"
+          }
+        },
+
+        "tooltip": [
+          {
+            "field": "State_Group",
+            "type": "nominal",
+            "title": "Region"
+          },
+          {
+            "field": "Percentage",
+            "type": "quantitative",
+            "title": "Internet Access (%)",
+            "format": ".1f"
+          }
+        ]
+      }
+    },
+
+    {
+      "data": {
+        "values": [
+          {
+            "lon": 116,
+            "lat": -25,
+            "label": "High access\nacross WA"
+          },
+          {
+            "lon": 134,
+            "lat": -22,
+            "label": "Lower access\nin SA/NT"
+          }
+        ]
+      },
+
+      "mark": {
+        "type": "text",
+        "fontSize": 11,
+        "fontWeight": "bold",
+        "color": "#fbbf24"
+      },
+
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "label"
+        }
       }
     }
   ],
-  "mark": {"type": "geoshape", "stroke": "#1e293b", "strokeWidth": 1},
-  "encoding": {
-    "color": {
-      "field": "Percentage",
-      "type": "quantitative",
-      "scale": {"scheme": "blues"},
-      "title": "Internet Access (%)",
-      "legend": {"titleColor": "#94a3b8", "labelColor": "#94a3b8"}
-    },
-    "tooltip": [
-      {"field": "State_Group", "type": "nominal", "title": "Region"},
-      {"field": "Percentage", "type": "quantitative", "title": "Internet Access (%)", "format": ".1f"}
-    ]
-  },
+
   "config": {
-    "view": {"stroke": "transparent"}
+    "view": {
+      "stroke": "transparent"
+    }
   }
 }
