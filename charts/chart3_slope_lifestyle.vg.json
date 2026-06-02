@@ -1,6 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {"text": "Shift in Lifestyle Reasons for Internet Usage (2014 vs 2016)", "color": "#cbd5e1"},
+  "subtitle": "Comparing changes in internet usage habits over time",
+  "subtitleColor": "#94a3b8",
   "width": "container",
   "height": 350,
   "background": "transparent",
