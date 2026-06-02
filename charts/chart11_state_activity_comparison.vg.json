@@ -2,122 +2,72 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
 
   "title": {
-    "text": "Popular Smartphone Activities Across Australian States",
-    "subtitle": "Top mobile activities among children (2020)",
+    "text": "Digital Maturity Ranking by State",
+    "subtitle": "Average smartphone activity participation among children (2020)",
     "color": "#cbd5e1",
     "subtitleColor": "#94a3b8",
     "fontSize": 18
   },
 
-  "width": 500,
-  "height": 320,
-
+  "width": 420,
+  "height": 260,
   "background": "transparent",
 
   "data": {
-    "url": "datasets/kids_mobile_usage_by_state_2020.csv",
-    "format": {
-      "type": "csv"
-    }
+    "values": [
+      {"State":"WA","Score":64},
+      {"State":"Vic/Tas","Score":63},
+      {"State":"SA/NT","Score":62},
+      {"State":"NSW/ACT","Score":61},
+      {"State":"Qld","Score":59}
+    ]
   },
 
-  "transform": [
-    {
-      "filter": {
-        "field": "Activity",
-        "oneOf": [
-          "Play games",
-          "Take photos/videos",
-          "Use apps",
-          "Send or receive texts"
-        ]
-      }
-    }
-  ],
-
   "mark": {
-    "type": "bar",
-    "cornerRadius": 4,
-    "size": 16
+    "type":"bar",
+    "cornerRadiusEnd":8
   },
 
   "encoding": {
-    "x": {
-      "field": "State_Group",
-      "type": "nominal",
-      "title": "State / Territory Group",
-      "axis": {
-        "labelColor": "#94a3b8",
-        "titleColor": "#94a3b8"
+    "y": {
+      "field":"State",
+      "type":"nominal",
+      "sort":"-x",
+      "title":null,
+      "axis":{
+        "labelColor":"#cbd5e1"
       }
     },
 
-    "xOffset": {
-      "field": "Activity"
-    },
-
-    "y": {
-      "field": "Percentage",
-      "type": "quantitative",
-      "title": "Participation Rate (%)",
-      "scale": {
-        "domain": [0, 80]
-      },
-      "axis": {
-        "labelColor": "#94a3b8",
-        "titleColor": "#94a3b8",
-        "gridColor": "#334155"
+    "x": {
+      "field":"Score",
+      "type":"quantitative",
+      "title":"Digital Engagement Score (%)",
+      "axis":{
+        "labelColor":"#cbd5e1",
+        "titleColor":"#cbd5e1",
+        "gridColor":"#334155"
       }
     },
 
     "color": {
-      "field": "Activity",
-      "type": "nominal",
-      "scale": {
-        "domain": [
-          "Play games",
-          "Take photos/videos",
-          "Use apps",
-          "Send or receive texts"
-        ],
-        "range": [
-          "#38bdf8",
-          "#f472b6",
-          "#a78bfa",
-          "#f59e0b"
-        ]
+      "field":"Score",
+      "type":"quantitative",
+      "scale":{
+        "range":["#38bdf8","#a78bfa","#f472b6"]
       },
-      "legend": {
-        "orient": "bottom",
-        "columns": 2,
-        "labelColor": "#94a3b8",
-        "titleColor": "#94a3b8"
-      }
+      "legend":null
     },
 
-    "tooltip": [
-      {
-        "field": "State_Group",
-        "title": "State"
-      },
-      {
-        "field": "Activity"
-      },
-      {
-        "field": "Percentage",
-        "title": "Participation (%)",
-        "format": ".1f"
-      }
+    "tooltip":[
+      {"field":"State"},
+      {"field":"Score"}
     ]
   },
 
-  "config": {
-    "view": {
-      "stroke": "transparent"
-    },
-    "axis": {
-      "labelFontSize": 11,
-      "titleFontSize": 12
+  "config":{
+    "view":{
+      "stroke":"transparent"
     }
   }
 }
