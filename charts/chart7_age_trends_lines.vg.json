@@ -1,30 +1,81 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": {"text": "Growth Trajectory of Habits Over Time", "color": "#cbd5e1"},
-  "width": 350,
-  "height": 300,
+
+  "title": {
+    "text": "Overall Smartphone Activity Participation by Age Group",
+    "subtitle": "Average participation across all activities (2015–2020)",
+    "color": "#cbd5e1",
+    "subtitleColor": "#94a3b8",
+    "fontSize": 20
+  },
+
+  "width": 420,
+  "height": 280,
   "background": "transparent",
+
   "data": {
     "values": [
-      {"Year": 2015, "Activity": "Games", "Percentage": 40},
-      {"Year": 2016, "Activity": "Games", "Percentage": 45},
-      {"Year": 2017, "Activity": "Games", "Percentage": 50},
-      {"Year": 2018, "Activity": "Games", "Percentage": 55},
-      {"Year": 2019, "Activity": "Games", "Percentage": 60},
-      {"Year": 2020, "Activity": "Games", "Percentage": 65},
-      {"Year": 2015, "Activity": "Apps", "Percentage": 30},
-      {"Year": 2016, "Activity": "Apps", "Percentage": 35},
-      {"Year": 2017, "Activity": "Apps", "Percentage": 40},
-      {"Year": 2018, "Activity": "Apps", "Percentage": 45},
-      {"Year": 2019, "Activity": "Apps", "Percentage": 50},
-      {"Year": 2020, "Activity": "Apps", "Percentage": 55}
+      {"Age_Group":"6-9 year olds","Average":48},
+      {"Age_Group":"10-11 year olds","Average":63},
+      {"Age_Group":"12-13 year olds","Average":77}
     ]
   },
-  "mark": {"type": "line", "point": true, "strokeWidth": 3},
-  "encoding": {
-    "x": {"field": "Year", "type": "ordinal", "title": "Year", "axis": {"labelColor": "#94a3b8", "titleColor": "#94a3b8"}},
-    "y": {"field": "Percentage", "type": "quantitative", "title": "Participation (%)", "axis": {"labelColor": "#94a3b8", "titleColor": "#94a3b8", "gridColor": "#334155"}},
-    "color": {"field": "Activity", "type": "nominal", "scale": {"scheme": "set2"}, "legend": {"titleColor": "#94a3b8", "labelColor": "#94a3b8"}}
+
+  "mark": {
+    "type": "bar",
+    "cornerRadiusTopLeft": 6,
+    "cornerRadiusTopRight": 6
   },
-  "config": {"view": {"stroke": "transparent"}}
+
+  "encoding": {
+    "x": {
+      "field": "Age_Group",
+      "type": "nominal",
+      "sort": [
+        "6-9 year olds",
+        "10-11 year olds",
+        "12-13 year olds"
+      ],
+      "title": "Age Group",
+      "axis": {
+        "labelColor": "#cbd5e1",
+        "titleColor": "#cbd5e1"
+      }
+    },
+
+    "y": {
+      "field": "Average",
+      "type": "quantitative",
+      "title": "Average Participation (%)",
+      "axis": {
+        "labelColor": "#cbd5e1",
+        "titleColor": "#cbd5e1",
+        "gridColor": "#334155"
+      }
+    },
+
+    "color": {
+      "field": "Age_Group",
+      "type": "nominal",
+      "scale": {
+        "range": [
+          "#38bdf8",
+          "#a78bfa",
+          "#f472b6"
+        ]
+      },
+      "legend": null
+    },
+
+    "tooltip": [
+      {"field":"Age_Group"},
+      {"field":"Average","format":".1f"}
+    ]
+  },
+
+  "config": {
+    "view": {
+      "stroke": "transparent"
+    }
+  }
 }
