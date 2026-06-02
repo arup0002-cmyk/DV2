@@ -124,3 +124,9 @@ body {
 .chart-card {
     min-height: 420px;
 }
+
+#chart11 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
