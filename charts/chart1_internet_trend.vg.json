@@ -21,7 +21,6 @@
 
 "layer": [
 
-```
 {
   "mark": {
     "type": "line",
@@ -196,7 +195,6 @@
     "text": {"field": "label"}
   }
 }
-```
 
 ],
 
