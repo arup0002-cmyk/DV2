@@ -3,7 +3,7 @@
 
   "title": {
     "text": "Internet Usage Adoption Timeline in Australia",
-    "subtitle": "Internet access grew from a niche service to a household necessity",
+    "subtitle": "Internet adoption increased from under 5% to almost 100%.  ",
     "fontSize": 16,
     "subtitleFontSize": 12,
     "color": "#e2e8f0",
@@ -114,6 +114,40 @@
         "strokeWidth": 1,
         "dash": [4, 4]
       },
+      ,
+{
+  "data": {
+    "values": [
+      {
+        "Year": "1999-01-01",
+        "Internet_Usage_Percentage": 45,
+        "label": "Home internet became more affordable\nand widely available"
+      }
+    ]
+  },
+  "mark": {
+    "type": "text",
+    "align": "left",
+    "dx": 10,
+    "dy": -10,
+    "fontSize": 12,
+    "fontWeight": "bold",
+    "color": "#fbbf24"
+  },
+  "encoding": {
+    "x": {
+      "field": "Year",
+      "type": "temporal"
+    },
+    "y": {
+      "field": "Internet_Usage_Percentage",
+      "type": "quantitative"
+    },
+    "text": {
+      "field": "label"
+    }
+  }
+}
       "encoding": {
         "x": {
           "field": "Year",
@@ -146,7 +180,7 @@
         "fontWeight": "bold",
         "color": "#fbbf24",
         "dx": 20,
-        "dy": -20
+        "dy": 15
       },
       "encoding": {
         "x": {
@@ -177,7 +211,7 @@
         "type": "text",
         "fontSize": 11,
         "fontWeight": "bold",
-        "color": "#a78bfa",
+        "color": "#c084fc",
         "dx": 25,
         "dy": -15
       },
