@@ -32,9 +32,9 @@
       "field": "Age_Group",
       "type": "nominal",
       "sort": [
-        "6-9 year olds",
-        "10-11 year olds",
-        "12-13 year olds"
+        "6-9 y/o",
+        "10-11 y/o",
+        "12-13 y/o"
       ],
       "title": "Age Group",
       "axis": {
