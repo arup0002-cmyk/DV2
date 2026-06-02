@@ -1,21 +1,26 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+
   "title": {
     "text": "Internet Usage Adoption Timeline in Australia",
-    "subtitle": "Percentage of the general population with internet access (1990 - 2020)",
+    "subtitle": "Internet access grew from a niche service to a household necessity",
     "fontSize": 16,
     "subtitleFontSize": 12,
     "color": "#e2e8f0",
     "subtitleColor": "#94a3b8",
     "anchor": "start"
   },
+
   "width": "container",
   "height": 380,
   "background": "transparent",
+
   "data": {
     "url": "datasets/australia_internet_usage.csv"
   },
+
   "layer": [
+
     {
       "mark": {
         "type": "line",
@@ -49,6 +54,7 @@
         }
       }
     },
+
     {
       "mark": {
         "type": "point",
@@ -57,8 +63,14 @@
         "color": "#bae6fd"
       },
       "encoding": {
-        "x": {"field": "Year", "type": "temporal"},
-        "y": {"field": "Internet_Usage_Percentage", "type": "quantitative"},
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Internet_Usage_Percentage",
+          "type": "quantitative"
+        },
         "opacity": {
           "condition": {
             "param": "hover",
@@ -68,8 +80,18 @@
           "value": 0
         },
         "tooltip": [
-          {"field": "Year", "type": "temporal", "timeUnit": "year", "title": "Year"},
-          {"field": "Internet_Usage_Percentage", "type": "quantitative", "title": "Access Rate (%)", "format": ".1f"}
+          {
+            "field": "Year",
+            "type": "temporal",
+            "timeUnit": "year",
+            "title": "Year"
+          },
+          {
+            "field": "Internet_Usage_Percentage",
+            "type": "quantitative",
+            "title": "Access Rate (%)",
+            "format": ".1f"
+          }
         ]
       },
       "params": [
@@ -84,10 +106,19 @@
         }
       ]
     },
+
     {
-      "mark": {"type": "rule", "color": "#cbd5e1", "strokeWidth": 1, "dash": [4, 4]},
+      "mark": {
+        "type": "rule",
+        "color": "#cbd5e1",
+        "strokeWidth": 1,
+        "dash": [4, 4]
+      },
       "encoding": {
-        "x": {"field": "Year", "type": "temporal"},
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
         "opacity": {
           "condition": {
             "param": "hover",
@@ -97,9 +128,112 @@
           "value": 0
         }
       }
+    },
+
+    {
+      "data": {
+        "values": [
+          {
+            "Year": "1999-01-01",
+            "Internet_Usage_Percentage": 40,
+            "label": "Rapid adoption period"
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "fontSize": 11,
+        "fontWeight": "bold",
+        "color": "#fbbf24",
+        "dx": 20,
+        "dy": -20
+      },
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Internet_Usage_Percentage",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "label"
+        }
+      }
+    },
+
+    {
+      "data": {
+        "values": [
+          {
+            "Year": "2001-01-01",
+            "Internet_Usage_Percentage": 53,
+            "label": "Majority online"
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "fontSize": 11,
+        "fontWeight": "bold",
+        "color": "#a78bfa",
+        "dx": 25,
+        "dy": -15
+      },
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Internet_Usage_Percentage",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "label"
+        }
+      }
+    },
+
+    {
+      "data": {
+        "values": [
+          {
+            "Year": "2021-01-01",
+            "Internet_Usage_Percentage": 96,
+            "label": "Near universal access"
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "fontSize": 11,
+        "fontWeight": "bold",
+        "color": "#f472b6",
+        "dx": -90,
+        "dy": -20
+      },
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Internet_Usage_Percentage",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "label"
+        }
+      }
     }
+
   ],
+
   "config": {
-    "view": {"stroke": "transparent"}
+    "view": {
+      "stroke": "transparent"
+    }
   }
 }
