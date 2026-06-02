@@ -2,8 +2,8 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
 
   "title": {
-    "text": "Overall Smartphone Activity Participation by Age Group",
-    "subtitle": "Average participation across all activities (2015–2020)",
+    "text": "Overall Smartphone Engagement by Age Group",
+    "subtitle": "Average participation across major smartphone activities (2015–2020)",
     "color": "#cbd5e1",
     "subtitleColor": "#94a3b8",
     "fontSize": 20
