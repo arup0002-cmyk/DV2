@@ -15,9 +15,9 @@
 
   "data": {
     "values": [
-      {"Age_Group":"6-9 year olds","Average":48},
-      {"Age_Group":"10-11 year olds","Average":63},
-      {"Age_Group":"12-13 year olds","Average":77}
+      {"Age_Group":"6-9 y/o","Average":48},
+      {"Age_Group":"10-11 y/o","Average":63},
+      {"Age_Group":"12-13 y/o","Average":77}
     ]
   },
 
