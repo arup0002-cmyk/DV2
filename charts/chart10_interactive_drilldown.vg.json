@@ -17,9 +17,20 @@
     "url": "datasets/reasons_for_internet_usage.csv"
   },
 
+  "params": [
+    {
+      "name": "highlight",
+      "select": {
+        "type": "point",
+        "on": "mouseover"
+      }
+    }
+  ],
+
   "mark": {
     "type": "bar",
-    "cornerRadiusEnd": 4
+    "stroke": "white",
+    "cursor": "pointer"
   },
 
   "encoding": {
@@ -43,16 +54,28 @@
       }
     },
 
+    "fillOpacity": {
+      "condition": {
+        "param": "highlight",
+        "value": 1
+      },
+      "value": 0.4
+    },
+
+    "strokeWidth": {
+      "condition": {
+        "param": "highlight",
+        "empty": false,
+        "value": 2
+      },
+      "value": 0
+    },
+
     "color": {
-      "field": "2016-17_Pct",
-      "type": "quantitative",
+      "field": "Reason",
+      "type": "nominal",
       "scale": {
-        "range": [
-          "#38bdf8",
-          "#60a5fa",
-          "#a78bfa",
-          "#f472b6"
-        ]
+        "scheme": "dark2"
       },
       "legend": null
     },
@@ -66,8 +89,7 @@
       {
         "field": "2016-17_Pct",
         "type": "quantitative",
-        "title": "Usage (%)",
-        "format": ".1f"
+        "title": "Usage (%)"
       }
     ]
   },
