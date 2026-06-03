@@ -2,7 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
     "text": "Most Popular Smartphone Activities",
-    "subtitle": "Average participation rates across all groups (2015–2020)",
+    "subtitle": "Average participation rates (2015–2020)",
     "color": "#e2e8f0",
     "subtitleColor": "#94a3b8",
     "fontSize": 16,
