@@ -9,7 +9,7 @@ var vg_8 = "charts/chart8_lifestyle_comparison.vg.json";
 var vg_9 = "charts/chart9_year_slider_bars.vg.json";
 var vg_10 = "charts/chart10_interactive_drilldown.vg.json";
 var vg_11 = "charts/chart11_state_activity_comparison.vg.json";
-var vg_12 = "charts/chart12_age_activity_heatmap.vg.json";
+var vg_12 = "charts/chart12_final_v2.vg.json";
 
 vegaEmbed("#chart1", vg_1);
 vegaEmbed("#chart2", vg_2);
