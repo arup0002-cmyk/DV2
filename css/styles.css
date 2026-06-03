@@ -227,3 +227,14 @@ grid-template-columns: 1fr;
     color: #94a3b8;
 }
 }
+.chart12-card {
+    min-height: 520px !important;
+}
+
+.chart12-card .vis-container {
+    align-items: flex-start !important;
+}
+
+#chart12 {
+    width: 100%;
+}
