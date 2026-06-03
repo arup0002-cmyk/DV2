@@ -182,5 +182,19 @@ grid-template-columns: 1fr;
 .full-width.chart-card {
     min-height: auto;
 }
+  
+.footer-section {
+    background-color: #020617;
+    color: #94a3b8;
+    padding: 40px 0;
+    margin-top: 50px;
+    border-top: 2px solid #334155;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.footer-section p {
+    margin-bottom: 10px;
+}
 
 }
