@@ -1,42 +1,92 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+
   "title": {
-    "text": "Regional Lifestyle Differences in Mobile Usage (2020)",
-    "color": "#cbd5e1"
+    "text": "Most Popular Smartphone Activities by Region",
+    "subtitle": "Participation rates for key mobile activities across Australia",
+    "color": "#cbd5e1",
+    "subtitleColor": "#94a3b8",
+    "fontSize": 18
   },
+
   "background": "transparent",
   "width": "container",
   "height": 400,
+
   "data": {
     "url": "datasets/kids_mobile_usage_by_state_2020.csv"
   },
-  "mark": {"type": "rect", "tooltip": true},
+
+  "mark": {
+    "type": "rect",
+    "tooltip": true
+  },
+
   "encoding": {
     "x": {
       "field": "State_Group",
       "type": "nominal",
       "title": "Region",
-      "axis": {"labelColor": "#94a3b8", "titleColor": "#94a3b8", "labelAngle": -45}
+      "axis": {
+        "labelColor": "#94a3b8",
+        "titleColor": "#94a3b8",
+        "labelAngle": -45
+      }
     },
+
     "y": {
       "field": "Activity",
       "type": "nominal",
       "title": "Mobile Activity",
-      "axis": {"labelColor": "#94a3b8", "titleColor": "#94a3b8"}
+      "axis": {
+        "labelColor": "#94a3b8",
+        "titleColor": "#94a3b8"
+      }
     },
+
     "color": {
       "field": "Percentage",
       "type": "quantitative",
-      "scale": {"scheme": "magma"},
-      "legend": {"titleColor": "#94a3b8", "labelColor": "#94a3b8"}
+      "title": "Participation (%)",
+      "scale": {
+        "range": [
+          "#dbeafe",
+          "#93c5fd",
+          "#60a5fa",
+          "#3b82f6",
+          "#2563eb",
+          "#1d4ed8"
+        ]
+      },
+      "legend": {
+        "titleColor": "#94a3b8",
+        "labelColor": "#94a3b8"
+      }
     },
+
     "tooltip": [
-      {"field": "State_Group", "type": "nominal"},
-      {"field": "Activity", "type": "nominal"},
-      {"field": "Percentage", "type": "quantitative", "title": "Participation (%)", "format": ".1f"}
+      {
+        "field": "State_Group",
+        "type": "nominal",
+        "title": "Region"
+      },
+      {
+        "field": "Activity",
+        "type": "nominal",
+        "title": "Activity"
+      },
+      {
+        "field": "Percentage",
+        "type": "quantitative",
+        "title": "Participation (%)",
+        "format": ".1f"
+      }
     ]
   },
+
   "config": {
-    "view": {"stroke": "transparent"}
+    "view": {
+      "stroke": "transparent"
+    }
   }
 }
