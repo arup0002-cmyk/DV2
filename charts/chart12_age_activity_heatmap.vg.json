@@ -5,11 +5,12 @@
     "text": "Most Popular Smartphone Activities Among Children",
     "subtitle": "Average participation rates across all age groups (2015–2020)",
     "color": "#cbd5e1",
-    "subtitleColor": "#94a3b8"
+    "subtitleColor": "#94a3b8",
+    "fontSize": 18
   },
 
-  "width": 500,
-  "height": 250,
+  "width": 550,
+  "height": 280,
   "background": "transparent",
 
   "data": {
@@ -21,32 +22,118 @@
     ]
   },
 
-  "mark": {
-    "type": "circle",
-    "size": 500
-  },
-
-  "encoding": {
-    "x": {
-      "field": "Average",
-      "type": "quantitative",
-      "title": "Participation (%)"
+  "layer": [
+    {
+      "mark": {
+        "type": "rule",
+        "strokeWidth": 3,
+        "color": "#475569"
+      },
+      "encoding": {
+        "y": {
+          "field": "Activity",
+          "type": "nominal",
+          "sort": "-x",
+          "title": null,
+          "axis": {
+            "labelColor": "#cbd5e1",
+            "labelFontSize": 12
+          }
+        },
+        "x": {
+          "value": 0
+        },
+        "x2": {
+          "field": "Average"
+        }
+      }
     },
 
-    "y": {
-      "field": "Activity",
-      "type": "nominal",
-      "sort": "-x"
+    {
+      "mark": {
+        "type": "circle",
+        "size": 650,
+        "stroke": "#ffffff",
+        "strokeWidth": 2
+      },
+
+      "encoding": {
+        "y": {
+          "field": "Activity",
+          "type": "nominal",
+          "sort": "-x"
+        },
+
+        "x": {
+          "field": "Average",
+          "type": "quantitative",
+          "title": "Participation Rate (%)",
+          "scale": {
+            "domain": [0, 75]
+          },
+          "axis": {
+            "labelColor": "#cbd5e1",
+            "titleColor": "#cbd5e1",
+            "gridColor": "#334155"
+          }
+        },
+
+        "color": {
+          "field": "Average",
+          "type": "quantitative",
+          "scale": {
+            "range": [
+              "#93c5fd",
+              "#60a5fa",
+              "#38bdf8",
+              "#1d4ed8"
+            ]
+          },
+          "legend": null
+        },
+
+        "tooltip": [
+          {
+            "field": "Activity",
+            "title": "Activity"
+          },
+          {
+            "field": "Average",
+            "title": "Participation (%)"
+          }
+        ]
+      }
     },
 
-    "color": {
-      "field": "Average",
-      "type": "quantitative",
-      "scale": {
-        "scheme": "blues"
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "middle",
+        "dx": 18,
+        "fontWeight": "bold",
+        "fontSize": 12,
+        "color": "#ffffff"
+      },
+
+      "encoding": {
+        "y": {
+          "field": "Activity",
+          "type": "nominal",
+          "sort": "-x"
+        },
+
+        "x": {
+          "field": "Average",
+          "type": "quantitative"
+        },
+
+        "text": {
+          "field": "Average"
+        }
       }
     }
-  },
+  ],
 
   "config": {
     "view": {
