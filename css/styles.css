@@ -185,11 +185,17 @@ grid-template-columns: 1fr;
   
 .footer-section {
     background-color: #020617;
-    color: #64748b; /* Slightly darker text for professional subtlety */
+    color: #64748b; 
     padding: 60px 0;
     margin-top: 80px;
     border-top: 1px solid #1e293b;
     text-align: center;
+    width: 100%;
+}
+
+.footer-content {
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .footer-title {
@@ -213,7 +219,6 @@ grid-template-columns: 1fr;
 
 .footer-data, .footer-ai {
     font-size: 0.85rem;
-    max-width: 800px;
     margin: 5px auto;
     line-height: 1.4;
 }
