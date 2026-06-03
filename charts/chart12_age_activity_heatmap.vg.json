@@ -2,67 +2,97 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
 
   "title": {
-    "text": "Digital Activity Preferences by Age Group",
-    "subtitle": "Heatmap of smartphone activity participation",
+    "text": "Most Popular Smartphone Activities Among Children",
+    "subtitle": "Average participation rates across all age groups (2015–2020)",
     "color": "#cbd5e1",
-    "subtitleColor": "#94a3b8"
+    "subtitleColor": "#94a3b8",
+    "fontSize": 18
   },
 
   "width": 600,
   "height": 320,
-
   "background": "transparent",
 
   "data": {
-    "url": "datasets/kids_mobile_usage_by_age.csv",
-    "format": {"type": "csv"}
-  },
-
-  "mark": {
-    "type": "rect"
-  },
-
-  "encoding": {
-    "x": {
-      "field": "Activity",
-      "type": "nominal",
-      "title": "Activity",
-      "axis": {
-        "labelAngle": -25,
-        "labelColor": "#94a3b8",
-        "titleColor": "#94a3b8"
-      }
-    },
-
-    "y": {
-      "field": "Age_Group",
-      "type": "nominal",
-      "title": "Age Group",
-      "axis": {
-        "labelColor": "#94a3b8",
-        "titleColor": "#94a3b8"
-      }
-    },
-
-    "color": {
-      "field": "Percentage",
-      "type": "quantitative",
-      "scale": {
-        "scheme": "blues"
-      },
-      "legend": {
-        "title": "Participation %",
-        "labelColor": "#94a3b8",
-        "titleColor": "#94a3b8"
-      }
-    },
-
-    "tooltip": [
-      {"field": "Age_Group"},
-      {"field": "Activity"},
-      {"field": "Percentage"}
+    "values": [
+      {"Activity":"Send or receive texts","Average":56},
+      {"Activity":"Take photos/videos","Average":66},
+      {"Activity":"Use apps","Average":61},
+      {"Activity":"Play games","Average":67}
     ]
   },
+
+  "layer": [
+    {
+      "mark": {
+        "type": "rule",
+        "color": "#475569",
+        "strokeWidth": 3
+      },
+      "encoding": {
+        "y": {
+          "field": "Activity",
+          "type": "nominal",
+          "sort": "-x",
+          "title": null,
+          "axis": {
+            "labelColor": "#94a3b8"
+          }
+        },
+        "x": {
+          "value": 0
+        },
+        "x2": {
+          "field": "Average"
+        }
+      }
+    },
+
+    {
+      "mark": {
+        "type": "point",
+        "filled": true,
+        "size": 220
+      },
+      "encoding": {
+        "y": {
+          "field": "Activity",
+          "type": "nominal",
+          "sort": "-x"
+        },
+
+        "x": {
+          "field": "Average",
+          "type": "quantitative",
+          "title": "Average Participation (%)",
+          "axis": {
+            "labelColor": "#94a3b8",
+            "titleColor": "#94a3b8",
+            "gridColor": "#334155"
+          }
+        },
+
+        "color": {
+          "field": "Average",
+          "type": "quantitative",
+          "scale": {
+            "range": [
+              "#93c5fd",
+              "#60a5fa",
+              "#3b82f6",
+              "#1d4ed8"
+            ]
+          },
+          "legend": null
+        },
+
+        "tooltip": [
+          {"field":"Activity"},
+          {"field":"Average","title":"Participation (%)"}
+        ]
+      }
+    }
+  ],
 
   "config": {
     "view": {
