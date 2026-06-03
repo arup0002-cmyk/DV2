@@ -1,29 +1,16 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-
-  "background": "#1e2d46",
-
-  "width": 1050,
-  "height": 240,
-
-  "padding": {
-    "left": 20,
-    "right": 50,
-    "top": 20,
-    "bottom": 20
-  },
-
   "title": {
     "text": "Most Popular Smartphone Activities",
     "subtitle": "Average participation rates (2015–2020)",
-    "fontSize": 24,
-    "fontWeight": "bold",
     "color": "#e2e8f0",
-    "subtitleFontSize": 15,
     "subtitleColor": "#94a3b8",
+    "fontSize": 18,
     "anchor": "start"
   },
-
+  "width": 1100,
+  "height": 350,
+  "background": "transparent",
   "data": {
     "values": [
       {"Activity": "Play games", "Average": 67},
@@ -32,78 +19,82 @@
       {"Activity": "Send or receive texts", "Average": 56}
     ]
   },
-
-  "encoding": {
-    "y": {
-      "field": "Activity",
-      "type": "nominal",
-      "sort": "-x",
-      "title": null,
-      "axis": {
-        "labelColor": "#e2e8f0",
-        "labelFontSize": 16,
-        "labelPadding": 10,
-        "domain": false,
-        "ticks": false
-      }
-    },
-
-    "x": {
-      "field": "Average",
-      "type": "quantitative",
-      "scale": {
-        "domain": [0, 75]
-      },
-      "title": "Participation Rate (%)",
-      "axis": {
-        "labelColor": "#94a3b8",
-        "titleColor": "#cbd5e1",
-        "titleFontSize": 15,
-        "labelFontSize": 13,
-        "gridColor": "#334155",
-        "tickColor": "#475569",
-        "domainColor": "#475569"
-      }
-    }
-  },
-
   "layer": [
     {
       "mark": {
-        "type": "bar",
-        "size": 4,
+        "type": "rule",
+        "strokeWidth": 4,
         "color": "#64748b"
+      },
+      "encoding": {
+        "y": {
+          "field": "Activity",
+          "type": "nominal",
+          "sort": "-x",
+          "axis": {
+            "labelColor": "#e2e8f0",
+            "labelFontSize": 14,
+            "domain": false,
+            "ticks": false,
+            "title": null
+          }
+        },
+        "x": {"value": 0},
+        "x2": {"field": "Average"}
       }
     },
-
     {
       "mark": {
-        "type": "point",
-        "filled": true,
-        "size": 450,
-        "color": "#4cc9ff"
+        "type": "circle",
+        "size": 500,
+        "color": "#38bdf8"
+      },
+      "encoding": {
+        "y": {
+          "field": "Activity",
+          "type": "nominal",
+          "sort": "-x"
+        },
+        "x": {
+          "field": "Average",
+          "type": "quantitative",
+          "scale": {"domain": [0, 75]},
+          "axis": {
+            "title": "Participation Rate (%)",
+            "labelColor": "#94a3b8",
+            "titleColor": "#94a3b8",
+            "gridColor": "#334155",
+            "tickColor": "#334155"
+          }
+        }
       }
     },
-
     {
       "mark": {
         "type": "text",
         "align": "left",
         "baseline": "middle",
-        "dx": 14,
-        "fontSize": 16,
+        "dx": 15,
+        "fontSize": 14,
         "fontWeight": "bold",
         "color": "#ffffff"
       },
-
       "encoding": {
+        "y": {
+          "field": "Activity",
+          "type": "nominal",
+          "sort": "-x"
+        },
+        "x": {
+          "field": "Average",
+          "type": "quantitative"
+        },
         "text": {
           "field": "Average"
         }
       }
     }
   ],
-
   "config": {
     "view": {
       "stroke": null
