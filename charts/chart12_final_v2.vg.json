@@ -1,97 +1,112 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Most Popular Smartphone Activities</title>
-  <style>
-    body {
-      font-family: sans-serif;
-      background: #0f172a;
-      color: #e2e8f0;
-      padding: 2rem;
-      margin: 0;
-    }
-    h2 { font-size: 18px; margin: 0 0 4px; }
-    p  { font-size: 13px; color: #94a3b8; margin: 0 0 1.5rem; }
-    .chart-wrap { position: relative; width: 100%; max-width: 700px; height: 240px; }
-  </style>
-</head>
-<body>
-  <h2>Most popular smartphone activities</h2>
-  <p>Average participation rates (2015–2020)</p>
-  <div class="chart-wrap">
-    <canvas id="dotChart" role="img"
-      aria-label="Horizontal dot plot: Play games 67%, Take photos/videos 66%, Use apps 61%, Send or receive texts 56%">
-      Play games 67%, Take photos/videos 66%, Use apps 61%, Send or receive texts 56%.
-    </canvas>
-  </div>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
-  <script>
-    new Chart(document.getElementById('dotChart'), {
-      type: 'bar',
-      data: {
-        labels: ['Send or receive texts', 'Use apps', 'Take photos/videos', 'Play games'],
-        datasets: [{
-          data: [56, 61, 66, 67],
-          backgroundColor: 'transparent',
-          borderColor: 'transparent',
-          barThickness: 2
-        }]
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Most Popular Smartphone Activities",
+    "subtitle": "Average participation rates (2015–2020)",
+    "color": "#e2e8f0",
+    "subtitleColor": "#94a3b8",
+    "fontSize": 18,
+    "anchor": "start"
+  },
+  "width": 1100,
+  "height": 350,
+  "background": "transparent",
+  "data": {
+    "values": [
+      {"Activity": "Play games", "Average": 67},
+      {"Activity": "Take photos/videos", "Average": 66},
+      {"Activity": "Use apps", "Average": 61},
+      {"Activity": "Send or receive texts", "Average": 56}
+    ]
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "rule",
+        "strokeWidth": 4,
+        "color": "#64748b"
       },
-      options: {
-        indexAxis: 'y',
-        responsive: true,
-        maintainAspectRatio: false,
-        plugins: { legend: { display: false }, tooltip: { callbacks: { label: ctx => ' ' + ctx.parsed.x + '%' } } },
-        scales: {
-          x: {
-            min: 0, max: 80,
-            grid: { color: 'rgba(255,255,255,0.08)' },
-            ticks: { color: '#94a3b8', callback: v => v + '%' },
-            title: { display: true, text: 'Participation rate (%)', color: '#94a3b8', font: { size: 12 } }
+      "encoding": {
+        "y": {
+          "field": "Activity",
+          "type": "nominal",
+          "sort": "-x",
+          "axis": {
+            "labelColor": "#e2e8f0",
+            "labelFontSize": 14,
+            "domain": false,
+            "ticks": false,
+            "title": null
+          }
+        },
+        "x": {
+          "value": 0
+        },
+        "x2": {
+          "field": "Average"
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "point",
+        "filled": true,
+        "size": 500,
+        "color": "#38bdf8"
+      },
+      "encoding": {
+        "y": {
+          "field": "Activity",
+          "type": "nominal",
+          "sort": "-x"
+        },
+        "x": {
+          "field": "Average",
+          "type": "quantitative",
+          "scale": {
+            "domain": [0, 75]
           },
-          y: {
-            grid: { display: false },
-            ticks: { color: '#e2e8f0', font: { size: 13 } }
+          "axis": {
+            "title": "Participation Rate (%)",
+            "labelColor": "#94a3b8",
+            "titleColor": "#94a3b8",
+            "gridColor": "#334155",
+            "tickColor": "#334155"
           }
         }
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "middle",
+        "dx": 15,
+        "fontSize": 14,
+        "fontWeight": "bold",
+        "color": "#ffffff"
       },
-      plugins: [{
-        id: 'lineAndDots',
-        afterDatasetsDraw(chart) {
-          const { ctx, scales: { x, y } } = chart;
-          const data = [
-            { label: 'Send or receive texts', val: 56 },
-            { label: 'Use apps',              val: 61 },
-            { label: 'Take photos/videos',    val: 66 },
-            { label: 'Play games',            val: 67 }
-          ];
-          data.forEach(d => {
-            const xPos = x.getPixelForValue(d.val);
-            const yPos = y.getPixelForValue(d.label);
-            ctx.save();
-            ctx.strokeStyle = '#475569';
-            ctx.lineWidth = 3;
-            ctx.beginPath();
-            ctx.moveTo(x.getPixelForValue(0), yPos);
-            ctx.lineTo(xPos, yPos);
-            ctx.stroke();
-            ctx.fillStyle = '#38bdf8';
-            ctx.beginPath();
-            ctx.arc(xPos, yPos, 10, 0, Math.PI * 2);
-            ctx.fill();
-            ctx.fillStyle = '#ffffff';
-            ctx.font = 'bold 11px sans-serif';
-            ctx.textAlign = 'center';
-            ctx.textBaseline = 'middle';
-            ctx.fillText(d.val, xPos, yPos);
-            ctx.restore();
-          });
+      "encoding": {
+        "y": {
+          "field": "Activity",
+          "type": "nominal",
+          "sort": "-x"
+        },
+        "x": {
+          "field": "Average",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "Average",
+          "type": "quantitative",
+          "format": ".0f"
         }
-      }]
-    });
-  </script>
-</body>
-</html>
+      }
+    }
+  ],
+  "config": {
+    "view": {
+      "stroke": null
+    }
+  }
+}
