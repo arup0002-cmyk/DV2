@@ -20,32 +20,100 @@
       {"Activity": "Send or receive texts", "Average": 56}
     ]
   },
+  "transform": [
+    {
+      "window": [
+        {
+          "op": "rank",
+          "as": "rank"
+        }
+      ],
+      "sort": [
+        {
+          "field": "Average",
+          "order": "descending"
+        }
+      ]
+    }
+  ],
+  "encoding": {
+    "y": {
+      "field": "Activity",
+      "type": "nominal",
+      "sort": {
+        "field": "Average",
+        "order": "descending"
+      },
+      "title": null,
+      "axis": {
+        "labelColor": "#cbd5e1",
+        "labelFontSize": 12,
+        "domain": false,
+        "ticks": false
+      }
+    }
+  },
   "layer": [
     {
-      "mark": {"type": "rule", "strokeWidth": 2, "color": "#475569"},
+      "mark": {
+        "type": "rule",
+        "strokeWidth": 2,
+        "color": "#475569"
+      },
       "encoding": {
-        "y": {"field": "Activity", "type": "nominal", "sort": "-x", "title": null, "axis": {"labelColor": "#cbd5e1", "labelFontSize": 12, "domain": false, "ticks": false}},
-        "x": {"value": 0},
-        "x2": {"field": "Average"}
+        "x": {
+          "value": 0
+        },
+        "x2": {
+          "field": "Average"
+        }
       }
     },
     {
-      "mark": {"type": "circle", "size": 300, "color": "#38bdf8"},
+      "mark": {
+        "type": "circle",
+        "size": 300,
+        "color": "#38bdf8"
+      },
       "encoding": {
-        "y": {"field": "Activity", "type": "nominal", "sort": "-x"},
-        "x": {"field": "Average", "type": "quantitative", "title": "Participation Rate (%)", "axis": {"labelColor": "#94a3b8", "titleColor": "#94a3b8", "gridColor": "#334155", "tickColor": "#334155"}}
+        "x": {
+          "field": "Average",
+          "type": "quantitative",
+          "title": "Participation Rate (%)",
+          "axis": {
+            "labelColor": "#94a3b8",
+            "titleColor": "#94a3b8",
+            "gridColor": "#334155",
+            "tickColor": "#334155"
+          }
+        }
       }
     },
     {
-      "mark": {"type": "text", "align": "left", "baseline": "middle", "dx": 15, "fontSize": 12, "color": "#ffffff", "fontWeight": "600"},
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "middle",
+        "dx": 15,
+        "fontSize": 12,
+        "fontWeight": "600",
+        "color": "#ffffff"
+      },
       "encoding": {
-        "y": {"field": "Activity", "type": "nominal", "sort": "-x"},
-        "x": {"field": "Average", "type": "quantitative"},
-        "text": {"field": "Average", "type": "quantitative"}
+        "x": {
+          "field": "Average",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "Average",
+          "type": "quantitative"
+        }
       }
     }
   ],
   "config": {
-    "view": {"stroke": "transparent"}
+    "view": {
+      "stroke": null
+    }
   }
 }
