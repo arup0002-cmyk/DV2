@@ -1,16 +1,86 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 450,
+  "height": 200,
+  "background": null,
   "data": {
     "values": [
-      {"Activity":"Play games","Average":67},
-      {"Activity":"Take photos/videos","Average":66},
-      {"Activity":"Use apps","Average":61},
-      {"Activity":"Send texts","Average":56}
+      {"Activity": "Play games", "Average": 67},
+      {"Activity": "Take photos/videos", "Average": 66},
+      {"Activity": "Use apps", "Average": 61},
+      {"Activity": "Send or receive texts", "Average": 56}
     ]
   },
-  "mark":"bar",
-  "encoding":{
-    "y":{"field":"Activity","type":"nominal"},
-    "x":{"field":"Average","type":"quantitative"}
+  "encoding": {
+    "y": {
+      "field": "Activity",
+      "type": "nominal",
+      "sort": "-x",
+      "axis": {
+        "labelColor": "#cbd5e1",
+        "labelFontSize": 12,
+        "domain": false,
+        "ticks": false,
+        "title": null
+      }
+    },
+    "x": {
+      "field": "Average",
+      "type": "quantitative",
+      "scale": {
+        "domain": [0, 75]
+      },
+      "axis": {
+        "title": "Participation Rate (%)",
+        "labelColor": "#94a3b8",
+        "titleColor": "#94a3b8",
+        "gridColor": "#334155",
+        "tickColor": "#334155"
+      }
+    }
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "bar",
+        "color": "#475569",
+        "size": 3
+      }
+    },
+    {
+      "mark": {
+        "type": "point",
+        "filled": true,
+        "size": 250,
+        "color": "#38bdf8"
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 12,
+        "color": "white",
+        "fontSize": 12,
+        "fontWeight": "bold"
+      },
+      "encoding": {
+        "text": {
+          "field": "Average"
+        }
+      }
+    }
+  ],
+  "title": {
+    "text": "Most Popular Smartphone Activities",
+    "subtitle": "Average participation rates (2015–2020)",
+    "color": "#e2e8f0",
+    "subtitleColor": "#94a3b8",
+    "anchor": "start"
+  },
+  "config": {
+    "view": {
+      "stroke": null
+    }
   }
 }
