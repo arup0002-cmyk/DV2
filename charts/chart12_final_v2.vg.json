@@ -1,8 +1,29 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 450,
-  "height": 200,
-  "background": null,
+
+  "background": "#1e2d46",
+
+  "width": 1050,
+  "height": 240,
+
+  "padding": {
+    "left": 20,
+    "right": 50,
+    "top": 20,
+    "bottom": 20
+  },
+
+  "title": {
+    "text": "Most Popular Smartphone Activities",
+    "subtitle": "Average participation rates (2015–2020)",
+    "fontSize": 24,
+    "fontWeight": "bold",
+    "color": "#e2e8f0",
+    "subtitleFontSize": 15,
+    "subtitleColor": "#94a3b8",
+    "anchor": "start"
+  },
+
   "data": {
     "values": [
       {"Activity": "Play games", "Average": 67},
@@ -11,59 +32,70 @@
       {"Activity": "Send or receive texts", "Average": 56}
     ]
   },
+
   "encoding": {
     "y": {
       "field": "Activity",
       "type": "nominal",
       "sort": "-x",
+      "title": null,
       "axis": {
-        "labelColor": "#cbd5e1",
-        "labelFontSize": 12,
+        "labelColor": "#e2e8f0",
+        "labelFontSize": 16,
+        "labelPadding": 10,
         "domain": false,
-        "ticks": false,
-        "title": null
+        "ticks": false
       }
     },
+
     "x": {
       "field": "Average",
       "type": "quantitative",
       "scale": {
         "domain": [0, 75]
       },
+      "title": "Participation Rate (%)",
       "axis": {
-        "title": "Participation Rate (%)",
         "labelColor": "#94a3b8",
-        "titleColor": "#94a3b8",
+        "titleColor": "#cbd5e1",
+        "titleFontSize": 15,
+        "labelFontSize": 13,
         "gridColor": "#334155",
-        "tickColor": "#334155"
+        "tickColor": "#475569",
+        "domainColor": "#475569"
       }
     }
   },
+
   "layer": [
     {
       "mark": {
         "type": "bar",
-        "color": "#475569",
-        "size": 3
+        "size": 4,
+        "color": "#64748b"
       }
     },
+
     {
       "mark": {
         "type": "point",
         "filled": true,
-        "size": 250,
-        "color": "#38bdf8"
+        "size": 450,
+        "color": "#4cc9ff"
       }
     },
+
     {
       "mark": {
         "type": "text",
         "align": "left",
-        "dx": 12,
-        "color": "white",
-        "fontSize": 12,
-        "fontWeight": "bold"
+        "baseline": "middle",
+        "dx": 14,
+        "fontSize": 16,
+        "fontWeight": "bold",
+        "color": "#ffffff"
       },
+
       "encoding": {
         "text": {
           "field": "Average"
@@ -71,13 +103,7 @@
       }
     }
   ],
-  "title": {
-    "text": "Most Popular Smartphone Activities",
-    "subtitle": "Average participation rates (2015–2020)",
-    "color": "#e2e8f0",
-    "subtitleColor": "#94a3b8",
-    "anchor": "start"
-  },
+
   "config": {
     "view": {
       "stroke": null
