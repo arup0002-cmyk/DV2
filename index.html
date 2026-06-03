@@ -1,64 +1,212 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Smartphone Usage Dashboard</title>
-    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
-    <link rel="stylesheet" href="css/styles.css">
+
+```
+<script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+
+<link rel="stylesheet" href="css/styles.css">
+```
+
 </head>
+
 <body>
-    
-    <section class="hero-section">
-        <div class="hero-content">
-            <h1>Smartphone & Internet Usage in Australia</h1>
-            <p class="hero-subtitle">
-                Exploring how age, location, and lifestyle shape digital connectivity.
-            </p>
-            
-            <p class="executive-summary">
-                This dashboard investigates the digital divide across Australia. By analyzing historical data and youth metrics, we explore how urbanization dictates internet access, why lifestyle priorities are shifting toward mobile entertainment, and how the youngest generations are natively adapting to app-based ecosystems.
-            </p>
 
-            <div class="kpi-container">
-                <div class="kpi-card">
-                    <div class="kpi-value">94.7%</div>
-                    <div class="kpi-label">National Connectivity Rate</div>
-                </div>
-                <div class="kpi-card">
-                    <div class="kpi-value">Entertainment</div>
-                    <div class="kpi-label">Dominant Digital Lifestyle</div>
-                </div>
-                <div class="kpi-card">
-                    <div class="kpi-value">12-13 Yrs</div>
-                    <div class="kpi-label">Peak Mobile Adoption Age</div>
-                </div>
+```
+<section class="hero-section">
+    <div class="hero-content">
+        <h1>Smartphone & Internet Usage in Australia</h1>
+
+        <p class="hero-subtitle">
+            Exploring how age, location, and lifestyle shape digital connectivity.
+        </p>
+
+        <p class="executive-summary">
+            This dashboard investigates internet access and smartphone usage patterns across Australia. Through historical trends, regional comparisons and age-based analysis, it highlights how digital technologies have become embedded in everyday life.
+        </p>
+
+        <div class="kpi-container">
+            <div class="kpi-card">
+                <div class="kpi-value">94.7%</div>
+                <div class="kpi-label">National Connectivity Rate</div>
+            </div>
+
+            <div class="kpi-card">
+                <div class="kpi-value">Entertainment</div>
+                <div class="kpi-label">Dominant Digital Lifestyle</div>
+            </div>
+
+            <div class="kpi-card">
+                <div class="kpi-value">12-13 Yrs</div>
+                <div class="kpi-label">Peak Mobile Adoption Age</div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <section class="content-section">
-        <div class="container">
-            <div class="chart-grid">
-                <div class="chart-card full-width"><div id="chart1" class="vis-container"></div></div>
-                <div class="chart-card"><div id="chart2" class="vis-container"></div></div>
-                <div class="chart-card"><div id="chart3" class="vis-container"></div></div>
-                <div class="chart-card"><div id="chart4" class="vis-container"></div></div>
-                <div class="chart-card"><div id="chart5" class="vis-container"></div></div>
-                <div class="chart-card"><div id="chart6" class="vis-container"></div></div>
-                <div class="chart-card"><div id="chart7" class="vis-container"></div></div>
-                <div class="chart-card"><div id="chart8" class="vis-container"></div></div>
-                <div class="chart-card" style="min-height: 250px;"><div id="chart9" class="vis-container"></div></div>
-                <div class="chart-card"><div id="chart10" class="vis-container"></div></div>
-                <div class="chart-card"><div id="chart11" class="vis-container"></div></div>
-                <div class="chart-card"><div id="chart12" class="vis-container"></div></div>
+<section class="content-section">
+    <div class="container">
+
+        <h2 class="section-heading">Australia's Digital Transformation</h2>
+
+        <div class="chart-grid">
+
+            <div class="chart-card full-width">
+                <p class="chart-description">
+                    Australia experienced rapid internet adoption between 1990 and 2020.
+                </p>
+
+                <div id="chart1" class="vis-container"></div>
+
+                <p class="chart-insight">
+                    Key Insight: Internet access increased from under 5% to almost 100%.
+                </p>
             </div>
-        </div>
-    </section>
 
-    <script src="js/vega_lite_vis.js"></script>
+            <div class="chart-card">
+                <p class="chart-description">
+                    Children's internet access varies slightly across Australian regions.
+                </p>
+
+                <div id="chart2" class="vis-container"></div>
+
+                <p class="chart-insight">
+                    Key Insight: Vic/Tas recorded the highest internet access rates.
+                </p>
+            </div>
+
+            <div class="chart-card">
+                <p class="chart-description">
+                    Australians increasingly use the internet for lifestyle and entertainment purposes.
+                </p>
+
+                <div id="chart3" class="vis-container"></div>
+
+                <p class="chart-insight">
+                    Key Insight: Entertainment-related internet use grew the fastest.
+                </p>
+            </div>
+
+            <div class="chart-card">
+                <p class="chart-description">
+                    Smartphone activities change significantly as children grow older.
+                </p>
+
+                <div id="chart4" class="vis-container"></div>
+
+                <p class="chart-insight">
+                    Key Insight: Older children engage in more diverse activities.
+                </p>
+            </div>
+
+            <div class="chart-card">
+                <p class="chart-description">
+                    Mobile activity participation differs slightly across Australian regions.
+                </p>
+
+                <div id="chart5" class="vis-container"></div>
+
+                <p class="chart-insight">
+                    Key Insight: Gaming remains popular across all regions.
+                </p>
+            </div>
+
+            <div class="chart-card">
+                <p class="chart-description">
+                    Regional comparisons reveal differences in mobile activity preferences.
+                </p>
+
+                <div id="chart6" class="vis-container"></div>
+
+                <p class="chart-insight">
+                    Key Insight: Regional differences are relatively small overall.
+                </p>
+            </div>
+
+            <div class="chart-card">
+                <p class="chart-description">
+                    Average smartphone participation increases steadily with age.
+                </p>
+
+                <div id="chart7" class="vis-container"></div>
+
+                <p class="chart-insight">
+                    Key Insight: 12–13 year olds show the highest engagement.
+                </p>
+            </div>
+
+            <div class="chart-card">
+                <p class="chart-description">
+                    Lifestyle activities vary considerably in popularity among Australians.
+                </p>
+
+                <div id="chart8" class="vis-container"></div>
+
+                <p class="chart-insight">
+                    Key Insight: Entertainment and communication dominate usage patterns.
+                </p>
+            </div>
+
+            <div class="chart-card" style="min-height:250px;">
+                <p class="chart-description">
+                    Internet activity participation changes across different years.
+                </p>
+
+                <div id="chart9" class="vis-container"></div>
+
+                <p class="chart-insight">
+                    Key Insight: Most activities became more common over time.
+                </p>
+            </div>
+
+            <div class="chart-card">
+                <p class="chart-description">
+                    Explore how different internet activities compare in popularity.
+                </p>
+
+                <div id="chart10" class="vis-container"></div>
+
+                <p class="chart-insight">
+                    Key Insight: Social and entertainment activities lead participation.
+                </p>
+            </div>
+
+            <div class="chart-card">
+                <p class="chart-description">
+                    States display similar patterns of smartphone activity participation.
+                </p>
+
+                <div id="chart11" class="vis-container"></div>
+
+                <p class="chart-insight">
+                    Key Insight: Age influences participation more than location.
+                </p>
+            </div>
+
+            <div class="chart-card">
+                <p class="chart-description">
+                    Certain smartphone activities are consistently more popular than others.
+                </p>
+
+                <div id="chart12" class="vis-container"></div>
+
+                <p class="chart-insight">
+                    Key Insight: Gaming and photo sharing remain highly popular.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<script src="js/vega_lite_vis.js"></script>
+```
 
 </body>
 </html>
