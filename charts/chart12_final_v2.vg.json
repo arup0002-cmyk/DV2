@@ -26,7 +26,7 @@
       "sort": "-x",
       "axis": {
         "title": null,
-        "labelColor": "#e2e8f0",
+        "labelColor": "#cbd5e1",
         "domain": false,
         "ticks": false
       }
@@ -39,9 +39,9 @@
       "axis": {
         "labelColor": "#cbd5e1",
         "titleColor": "#cbd5e1",
-        "gridColor": "#334155",
-        "domainColor": "#475569",
-        "tickColor": "#475569"
+        "gridColor": "#cbd5e1",
+        "domainColor": "#cbd5e1",
+        "tickColor": "#cbd5e1"
       }
     }
   },
