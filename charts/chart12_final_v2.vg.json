@@ -1,8 +1,10 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+
   "width": 900,
   "height": 250,
   "background": "transparent",
+
   "data": {
     "values": [
       {"Activity":"Play games","Average":67},
@@ -11,19 +13,42 @@
       {"Activity":"Send or receive texts","Average":56}
     ]
   },
+
   "mark": {
     "type": "bar",
     "color": "#38bdf8"
   },
+
   "encoding": {
     "y": {
       "field": "Activity",
       "type": "nominal",
-      "sort": "-x"
+      "sort": "-x",
+      "axis": {
+        "title": null,
+        "labelColor": "#e2e8f0",
+        "domain": false,
+        "ticks": false
+      }
     },
+
     "x": {
       "field": "Average",
-      "type": "quantitative"
+      "type": "quantitative",
+      "title": "Participation Rate (%)",
+      "axis": {
+        "labelColor": "#cbd5e1",
+        "titleColor": "#cbd5e1",
+        "gridColor": "#334155",
+        "domainColor": "#475569",
+        "tickColor": "#475569"
+      }
+    }
+  },
+
+  "config": {
+    "view": {
+      "stroke": null
     }
   }
 }
